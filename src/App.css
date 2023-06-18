@@ -38,8 +38,7 @@
   
 .loop:hover {
     animation-play-state: running; /* Change the animation state to running on hover */
-}
-  
+} 
 @keyframes linearGradientMove {
     100% {
         background-position: 28px 0, -28px 100%, 0 -28px, 100% 28px;
@@ -75,20 +74,74 @@
     background-size: 100% 15px,100% 15px,15px calc(100% - 30px),15px calc(100% - 30px);
     background-repeat: no-repeat;
     box-shadow: -2px -8px 49px 10px rgba(0,0,0,.19);
-
-    
 }
 
-.misk {
-    animation: oscillate 1s infinite ease-in-out;
-  }
-  
-  @keyframes oscillate {
+.bounce-one {
+    animation: 1s infinite alternate bounce-one;
+    animation-timing-function: ease-in-out;
+} 
+@keyframes bounce-one{
     0% {
-      transform: translateY(10%);
+        transform: translateY(10%);
     }
     100% {
-      transform: translateY(-10%);
+        transform: translateY(-10%);
+    }
+}
+
+.bounce-two {
+    animation: 1s infinite alternate bounce-two;
+    animation-timing-function: ease-in-out;
+}
+@keyframes bounce-two{
+    0% {
+        transform: translateY(-10%);
+    }
+    100% {
+        transform: translateY(10%);
+    }
+}
+  
+.waves {
+    background-image: repeating-linear-gradient(-45deg,#000,#000 1px,transparent 0,transparent 68px),repeating-linear-gradient(45deg,#000,#000 1px,transparent 0,transparent 68px),repeating-linear-gradient(-45deg,#000,#000 1px,transparent 0,transparent 71px),repeating-linear-gradient(45deg,#000,#000 1px,transparent 0,transparent 70px);
+    background-position: 0 101%,0 101%,0 0,0 0;
+    background-size: 93px 50px,93px 50px,100px 50px,100px 50px;
+    background-repeat: repeat-x;
+    animation: 2s infinite normal e;
+    animation-timing-function: linear;
+    animation-play-state: running;
+}
+@keyframes e{
+    0% {
+        background-position: 0 101%,0 101%,0 0,0 0;
+    }
+    100% {
+        background-position: 93px 101%,93px 101%,100px 0,100px 0;
+    }
+
+}
+
+.polp {
+    writing-mode: vertical-lr;   
+}
+
+@keyframes inAnimation {
+    0% {
+      opacity: 0;
+      visibility: hidden;
+    }
+    100% {
+      opacity: 1;
+      visibility: visible;
     }
   }
   
+  @keyframes outAnimation {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }

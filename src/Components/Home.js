@@ -7,7 +7,7 @@ import food from '../Assets/food.jpg';
 import retail from '../Assets/retail.jpg';
 import comm from '../Assets/comm.jpg';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Home = () => {
     const [isModal, setIsModal] = useState(false)
@@ -50,16 +50,16 @@ const Home = () => {
                     </g>
                 </svg>
             </div>
-            <div className="bg-white w-full h-full overflow-y-scroll pt-64">
-                <p className='px-14 mb-32 text-[75px] font-medium leading-[85px]'>Canal Street Market is a carefully curated retail market, food hall & community space open year-round at 265 Canal Street. Support Small Business this weekend!</p>
+            <div className="bg-white w-full h-full  overflow-y-scroll px-16 pt-64">
+                <p className='mb-32 text-[75px] font-medium leading-[85px]'>Canal Street Market is a carefully curated retail market, food hall & community space open year-round at 265 Canal Street. Support Small Business this weekend!</p>
                 
-                <div className=''>
+                <div className='mx-[-64px]'>
                     <img className='w-full' src={myImage} alt='A stall'/>
                 </div>
                     
-                <h2 className='px-16 mt-32 mb-14 text-[115px] leading-[150px]'>A New Kind <br/> of Market</h2>
+                <h2 className='mt-32 mb-14 text-[115px] leading-[150px]'>A New Kind <br/> of Market</h2>
                 
-                <div className='px-16 text-sm tracking-widest grid grid-cols-3 gap-16 mb-40'>
+                <div className='text-sm tracking-widest grid grid-cols-3 gap-16 mb-40'>
                     <div className=''>
                         <img src={food} alt="" />
                         <p className='mt-6'>Merging retail, food, art, and culture, Canal Street Market highlights top retail and design concepts, restaurants, and up-and-coming players in the downtown New York City community.</p>
@@ -74,7 +74,7 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div className='p-16'>
+                <div className='py-16'>
                     <h2 className='px-14 mb-20 text-8xl text-center font-medium leading-[105px]'>Market <br/> Events</h2>
                     <div className='zoom py-16 px-16 my-20 text-center tracking-widest grid grid-cols-3 gap-16'>
                         <div>
@@ -110,13 +110,23 @@ const Home = () => {
             }
 
             <Link to='/food'>
-                <div className="bg-blue-400 h-full w-[60px] flex-shrink-0"></div>
+                <div className="bg-blue-400 h-full w-[60px] text-xl flex justify-center items-center flex-shrink-0 relative">
+                    <p className='absolute w-max top-20 right-0 left-0 mr-auto ml-auto'>餐饮</p>
+                    <p className='polp font-bold tracking-[3px]'>Food</p>
+                </div>
             </Link>
+
             <Link to='/retail'>
-                <div className="bg-red-500 h-full w-[60px] flex-shrink-0"></div>
+                <div className="bg-red-500 h-full w-[60px] text-xl flex justify-center items-center flex-shrink-0 relative">
+                    <p className='absolute w-max top-20 right-0 left-0 mr-auto ml-auto'>購物</p>
+                    <p className='polp font-bold tracking-[3px]'>Retail</p>
+                </div>
             </Link>
             <Link to='/community'>
-                <div className="bg-yellow-500 h-full w-[60px] flex-shrink-0"></div>
+                <div className="bg-yellow-500 h-full w-[60px] text-xl flex justify-center items-center flex-shrink-0 relative">
+                    <p className='absolute w-max top-20 right-0 left-0 mr-auto ml-auto'>文化</p>
+                    <p className='polp font-bold tracking-[3px]'>Community</p>
+                </div>
             </Link>
         </div>
     )
