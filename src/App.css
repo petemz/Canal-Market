@@ -3,18 +3,7 @@
     src: url(ogg-font/Ogg-Regular.ttf);
     font-weight: normal;
   }
-/*
-@font-face {
-    font-family: oggFont;
-    src: url(ogg-font/Ogg-Bold.ttf);
-    font-weight: bold;
-}
-@font-face {
-    font-family: oggFont;
-    src: url(ogg-font/Ogg-Light.ttf);
-    font-weight: light;
-}*/
-
+  
 .App {
     height: 100vh;
     font-family: oggFont, sans-serif;
