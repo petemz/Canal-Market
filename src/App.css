@@ -134,7 +134,7 @@
       opacity: 1;
       visibility: visible;
     }
-  }
+}
   
   @keyframes outAnimation {
     0% {
@@ -144,4 +144,17 @@
       opacity: 0;
       visibility: hidden;
     }
-  }
+}
+
+.cars::-webkit-details-marker {
+	display: none;
+}
+
+select option {
+    height: 200px;
+}
+
+.sox {
+    transition: width 0.5s ease;
+}
+  

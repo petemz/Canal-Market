@@ -1,11 +1,14 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Modal from './Modal';
 import Tailend from './Tailend';
 import comm from '../Assets/comm.jpg';
 
 const Retail = () => {
     const [isModal, setIsModal] = useState(false)
+    const hoverRef = useRef(null);
+    const [visible, setVisible] = useState(false)
+    const [hoverImg, setHoverImg] = useState('')
 
     const items = [
         {item: 'Design Objects', vendor: 'American Design Club'},
@@ -24,6 +27,41 @@ const Retail = () => {
         {item: 'Sustainable lifestyle store', vendor: 'Siizu'},
         {item: 'Jewelry', vendor: 'Swagychic'},
     ]
+
+    const handleShow = (img) => {
+        setHoverImg(img)
+        setVisible(true)
+    }
+
+    const [width, setWidth] = useState(0)
+    console.log(width)
+  
+    useEffect(() => {
+        const handleResize = () => {
+            setWidth(hoverRef.current.offsetWidth)
+        }
+        handleResize();
+        window.addEventListener('resize', handleResize)
+        return () => {
+            window.removeEventListener('resize', handleResize)
+        }
+    }, [])
+    
+    const mountedStyle = { 
+        position: 'absolute',
+        top: Math.floor(Math.random() * (window.innerHeight - 450)),
+        left: Math.floor(Math.random()* (width-340)),
+        height: '450px',
+        animation: "inAnimation 500ms ease-in" 
+    }
+    const unmountedStyle = {
+        position: 'absolute',
+        top: Math.floor(Math.random() * (window.innerHeight - 450)),
+        left: Math.floor(Math.random()* (width-340)),
+        height: '450px',
+        animation: "outAnimation 1200ms ease-out",
+    }
+
     return (
         <div className="h-full flex">
             <Link to='/'>
@@ -74,12 +112,12 @@ const Retail = () => {
             </Link>
 
                         
-            <div className='bg-red-500 w-full h-full overflow-y-scroll px-16 pt-40'>
+            <div className={`bg-red-500 w-full h-full overflow-y-scroll px-16 pt-40`}>
                 <div className='flex justify-between mb-20'>
                     <div className='flex flex-col opacity-30 tracking-widest items-center'>
                         <p className='[writing-mode:vertical-lr]'>Retail</p>
-                        <svg className='rotate-[-90deg] w-5 h-5 mt-5' xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" xmlnsSvgjs="http://svgjs.com/svgjs" x="0" y="0" viewBox="0 0 512 512" style={{ enableBackground: "new 0 0 512 512"}} xmlSpace="preserve">
-                            <g transform="matrix(1,0,0,1,0,0)"><path d="m0 256 320 160.6L221.536 256 320 95.4z" fill="currentColor" data-original="#88d8c9" class=""></path><path d="m0 256 320 160.6L221.536 256H126.76z" fill="currentColor" data-original="#32bea6" class=""></path><path d="M432 240h80v32h-80zM286.592 240h80v32h-80z" fill="currentColor" data-original="#415e72" class=""></path></g>
+                        <svg className='rotate-[-90deg] w-5 h-5 mt-5' xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 512 512" style={{ enableBackground: "new 0 0 512 512"}} xmlSpace="preserve">
+                            <g transform="matrix(1,0,0,1,0,0)"><path d="m0 256 320 160.6L221.536 256 320 95.4z" fill="currentColor" data-original="#88d8c9" ></path><path d="m0 256 320 160.6L221.536 256H126.76z" fill="currentColor" data-original="#32bea6" ></path><path d="M432 240h80v32h-80zM286.592 240h80v32h-80z" fill="currentColor" data-original="#415e72" ></path></g>
                         </svg>
                     </div>
 
@@ -92,20 +130,26 @@ const Retail = () => {
                     <p className='absolute right-0 text-6xl'>購物</p>
                 </div>
 
-                <div className='grid grid-cols-3 gap-16'>
+                <div ref={hoverRef} className='grid grid-cols-3 gap-16 relative'>
                     {items.map(item => {
                         return (
-                            <div>
+                            <div
+                                className='cursor-pointer z-10' key={item.vendor} 
+                                onMouseEnter={() => handleShow(item.img)}
+                                onMouseLeave={() => setVisible(false)}
+                            >
                                 <p className=''>{item.item}</p>
                                 <p className='text-3xl mt-5'>{item.vendor}</p>
                             </div>
                         )}
                     )}
+                    
+                    {visible && <img className=' transition ease-in-out opacity-80' src={comm} style={visible ? mountedStyle : unmountedStyle} alt=""/>}
                 </div>
 
                 <div className="waves flex items-center py-28 my-28">
                     <svg className='bounce-one w-1/4' width="140px" height="176px" viewBox="0 0 140 176" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
-                        <g id="R2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="R2" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                             <g id="1440_retail_detail" transform="translate(-309.000000, -3029.000000)" fill="#000000">
                                 <g id="Group-9" transform="translate(121.000000, 1821.000000)">
                                     <g id="noun_Rose_1472739" transform="translate(265.471600, 1285.195327) rotate(-330.000000) translate(-265.471600, -1285.195327) translate(195.645011, 1205.195327)">
@@ -136,7 +180,7 @@ const Retail = () => {
                     </div>
                     
                     <svg className='bounce-two w-1/4' width="140px" height="176px" viewBox="0 0 140 176" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
-                        <g id="R2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="R2" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                             <g id="1440_retail_detail" transform="translate(-309.000000, -3029.000000)" fill="#000000">
                                 <g id="Group-9" transform="translate(121.000000, 1821.000000)">
                                     <g id="noun_Rose_1472739" transform="translate(265.471600, 1285.195327) rotate(-330.000000) translate(-265.471600, -1285.195327) translate(195.645011, 1205.195327)">

@@ -51,14 +51,14 @@ const Food = () => {
         left: Math.floor(Math.random()* (width-340)),
         height: '450px',
         animation: "inAnimation 500ms ease-in" 
-    };
+    }
     const unmountedStyle = {
         position: 'absolute',
         top: Math.floor(Math.random() * (window.innerHeight - 450)),
         left: Math.floor(Math.random()* (width-340)),
         height: '450px',
         animation: "outAnimation 1200ms ease-out",
-    };
+    }
 
     return (
         <div className="h-full flex">
@@ -125,7 +125,7 @@ const Food = () => {
                     {foods.map(food => {
                         return (
                             <div 
-                                className=' z-10' key={food.vendor} 
+                                className='cursor-pointer z-10' key={food.vendor} 
                                 onMouseEnter={() => handleShow(food.img)}
                                 onMouseLeave={() => setVisible(false)}
                             >

@@ -68,8 +68,8 @@ const Community = () => {
                 <div className='flex justify-between mb-20'>
                     <div className='flex flex-col opacity-50 tracking-widest items-center'>
                         <p className='[writing-mode:vertical-lr]'>Commmunity</p>
-                        <svg className='rotate-[-90deg] w-5 h-5 mt-5' xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" xmlnsSvgjs="http://svgjs.com/svgjs" x="0" y="0" viewBox="0 0 512 512" style={{ enableBackground: "new 0 0 512 512"}} xmlSpace="preserve">
-                            <g transform="matrix(1,0,0,1,0,0)"><path d="m0 256 320 160.6L221.536 256 320 95.4z" fill="currentColor" data-original="#88d8c9" class=""></path><path d="m0 256 320 160.6L221.536 256H126.76z" fill="currentColor" data-original="#32bea6" class=""></path><path d="M432 240h80v32h-80zM286.592 240h80v32h-80z" fill="currentColor" data-original="#415e72" class=""></path></g>
+                        <svg className='rotate-[-90deg] w-5 h-5 mt-5' xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 512 512" style={{ enableBackground: "new 0 0 512 512"}} xmlSpace="preserve">
+                            <g transform="matrix(1,0,0,1,0,0)"><path d="m0 256 320 160.6L221.536 256 320 95.4z" fill="currentColor" data-original="#88d8c9" ></path><path d="m0 256 320 160.6L221.536 256H126.76z" fill="currentColor" data-original="#32bea6" ></path><path d="M432 240h80v32h-80zM286.592 240h80v32h-80z" fill="currentColor" data-original="#415e72" ></path></g>
                         </svg>
                     </div>
 
@@ -77,14 +77,14 @@ const Community = () => {
                 </div>
 
                 <div className='flex justify-between relative mb-28'>
-                    <h1 className='text-[200px] leading-[192px]'>Canal St. <br/>Community</h1>
+                    <h1 className='text-[200px] break-words	w-full leading-[192px]'>Canal St. <br/>Community</h1>
                     <p className='absolute right-0 text-6xl'>購物</p>
                 </div>
 
                 <div className="waves flex items-center py-28 my-28">
                     <svg className='bounce-one w-1/4' width="117px" height="140px" viewBox="0 0 117 140" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
-                        <g id="R2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                            <g id="1440_community" transform="translate(-386.000000, -3535.000000)" fill="#000000" fill-rule="nonzero">
+                        <g id="R2" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+                            <g id="1440_community" transform="translate(-386.000000, -3535.000000)" fill="#000000" fillRule="nonzero">
                                 <g id="Group-15" transform="translate(239.000000, 3173.000000)">
                                     <g id="Group-14" transform="translate(0.000000, 180.000000)">
                                         <g id="Group-13" transform="translate(2.000000, 0.000000)">
@@ -104,8 +104,8 @@ const Community = () => {
                     </div>
                     
                     <svg transform="scale(1,-1) translate(-140px, 0)" className='bounce-two w-1/4'  width="117px" height="140px" viewBox="0 0 117 140" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
-                        <g id="R2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                            <g id="1440_community" transform="translate(-386.000000, -3535.000000)" fill="#000000" fill-rule="nonzero">
+                        <g id="R2" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+                            <g id="1440_community" transform="translate(-386.000000, -3535.000000)" fill="#000000" fillRule="nonzero">
                                 <g id="Group-15" transform="translate(239.000000, 3173.000000)">
                                     <g id="Group-14" transform="translate(0.000000, 180.000000)">
                                         <g id="Group-13" transform="translate(2.000000, 0.000000)">

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useState, } from 'react';
+import { useState, useEffect } from 'react';
 import Modal from './Modal';
 import Tailend from './Tailend';
 import myImage from '../Assets/home-main-xz2.jpg';
@@ -11,6 +11,16 @@ import comm from '../Assets/comm.jpg';
 
 const Home = () => {
     const [isModal, setIsModal] = useState(false)
+
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    useEffect(() => {
+        handleToggleWidth()
+    }, [])
+
+    const handleToggleWidth = () => {
+        setIsExpanded(!isExpanded);
+    }
 
     return (
         <div className="home h-full flex">
@@ -50,7 +60,7 @@ const Home = () => {
                     </g>
                 </svg>
             </div>
-            <div className="bg-white w-full h-full  overflow-y-scroll px-16 pt-64">
+            <div onClick={handleToggleWidth} className={` ${isExpanded ? 'w-full' : 'w-[60px] px-0'} sox bg-white h-full  overflow-y-scroll px-16 pt-64`}>
                 <p className='mb-32 text-[75px] font-medium leading-[85px]'>Canal Street Market is a carefully curated retail market, food hall & community space open year-round at 265 Canal Street. Support Small Business this weekend!</p>
                 
                 <div className='mx-[-64px]'>
@@ -110,7 +120,7 @@ const Home = () => {
             }
 
             <Link to='/food'>
-                <div className="bg-blue-400 h-full w-[60px] text-xl flex justify-center items-center flex-shrink-0 relative">
+                <div className={`${isExpanded ? 'w-[60px]' : 'w-[calc(100vw-180px)]'} sox bg-blue-400 h-full text-xl flex justify-center items-center flex-shrink-0 relative`}>
                     <p className='absolute w-max top-20 right-0 left-0 mr-auto ml-auto'>餐饮</p>
                     <p className='polp font-bold tracking-[3px]'>Food</p>
                 </div>
