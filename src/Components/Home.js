@@ -1,80 +1,34 @@
-import { Link } from 'react-router-dom';
-import { useState, useEffect, useRef,} from 'react';
-import { gsap, Power1 } from 'gsap';
+import { useState, useRef,} from 'react';
 import {Context} from "../Context"
 import { useContext } from "react"
 import Modal from './Modal';
 import Tailend from './Tailend';
+import usePageTransition from './usePageTrans';
+import LinkStrip from './LinkStrip';
+
 import myImage from '../Assets/home-main-xz2.jpg';
 import food from '../Assets/food.jpg';
 import retail from '../Assets/retail.jpg';
 import comm from '../Assets/comm.jpg';
-
-//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import map from '../Assets/map.avif'
 
 const Home = () => {
     const [isModal, setIsModal] = useState(false)
 
     const {currentPage, setCurrentPage} = useContext(Context)
-    const [isExpanded, setIsExpanded] = useState(false)
 
-    const aRef = useRef(null)
-    const bRef = useRef(null)
-    const cRef = useRef(null)
-    const dRef = useRef(null)
+    const homeRef = useRef(null)
+    const foodRef = useRef(null)
+    const retailRef = useRef(null)
+    const commRef = useRef(null)
 
-    let zRef
+    const pgData = [
+        {name: 'food', ref: foodRef, symb: '餐饮',  color: 'bg-blue-400'}, 
+        {name: 'retail', ref:retailRef, symb: '購物', color: 'bg-red-500'},  
+        {name: 'community', ref: commRef, symb: '文化', color: 'bg-yellow-500'}
+    ]
 
-    if (currentPage === 'food') {
-        zRef = bRef
-    } else if (currentPage === 'retail') {
-        zRef = cRef 
-    } else if (currentPage === 'comm') {
-        zRef = dRef
-    }
-
-    const handlePage = () => {
-        setCurrentPage('home')
-    }
-
-    useEffect(() => {
-        const timeline = gsap.timeline();
-
-        if (currentPage !== null) {
-
-            timeline.to(aRef.current, {
-                width: "calc(100vw - 180px)",
-                duration: 0.01,
-                delay: 0.1,
-            })
-
-            timeline.from(aRef.current.children, {
-                opacity: 0,
-                delay: 1,
-                duration: 0.5,
-                ease: Power1.easeInOut,
-            });
-
-            gsap.to(zRef.current, {
-                width: '60px',
-                duration: 1,
-                delay: 0.1,
-            })
-
-            setTimeout(() => {setIsExpanded(true)}, 400)
-        } else if (currentPage === null) {
-            timeline
-            .to(dRef.current, {height: '100%', duration: 0.8, stagger: 0.2 }, )
-            .to(cRef.current, {height: '100%', duration: 0.7, stagger: 0.1}, '<0.1')
-            .to(bRef.current, {height: '100%', duration: 0.6 }, '<0.1')
-        }
-    }, [])
-
-    useEffect(() => {
-        if (isExpanded) {
-          setCurrentPage('home');
-        }
-    }, [])
+    const { handlePage, isExpanded } = usePageTransition('home', pgData, currentPage, setCurrentPage, homeRef)
 
     return (
         <div className="home h-full flex">
@@ -114,7 +68,8 @@ const Home = () => {
                     </g>
                 </svg>
             </div>
-            <div ref={aRef}  className={`div-a bg-white h-full overflow-y-scroll ${currentPage === null ? 'w-[100vw] px-16' : 'w-[60px]'}  ${isExpanded ? 'px-16' : ''} pt-64`}>
+
+            <div ref={homeRef}  className={`div-a bg-white h-full overflow-y-scroll ${currentPage === null ? 'w-[100vw] px-16' : 'w-[60px]'}  ${isExpanded ? 'px-16' : ''} pt-64`}>
                 <p className='mb-32 text-[75px] font-medium leading-[85px]'>Canal Street Market is a carefully curated retail market, food hall & community space open year-round at 265 Canal Street. Support Small Business this weekend!</p>
                 
                 <div className='mx-[-64px]'>
@@ -156,46 +111,28 @@ const Home = () => {
                     </div>
 
                     <div className='grid grid-cols-2 gap-16 text-center'>
-                        <div className='loop py-24 px-6 w-full leading-[80px] text-6xl'>
-                            <p>265 Canal St. New York, NY</p>
+                        <div className='loop px-6 w-full leading-[80px] text-6xl'>
+                            <a className='h-full block py-24'  href="https://www.google.com/maps/place/265+Canal+St,+New+York,+NY+10013/@40.7190077,-74.0030314,17z/data=!3m1!4b1!4m5!3m4!1s0x89c2598a1c3945dd:0x6b44c616961ec727!8m2!3d40.7190077!4d-74.0008427" target='blank'>
+                                <p>265 Canal St. New York, NY</p>
+                            </a>
                         </div>
-                        <div className='loop py-20'>
-                            
+                        <div className={`loop p-[1px]`}>
+                            <a className='h-full' href="https://www.google.com/maps/place/265+Canal+St,+New+York,+NY+10013/@40.7190077,-74.0030314,17z/data=!3m1!4b1!4m5!3m4!1s0x89c2598a1c3945dd:0x6b44c616961ec727!8m2!3d40.7190077!4d-74.0008427" target='blank'>          
+                                <div className='h-full bg-cover' style={{backgroundImage: `url(${map})`}}>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-
                 <Tailend setIsModal={setIsModal}/>
             </div>
 
-            <Link to='/food'>
-                <div 
-                    onClick={()=> handlePage('food')} ref={bRef}  
-                    className={`bg-blue-400 ${currentPage === null ? 'h-0' : 'h-full'} ${currentPage === 'food' ? 'w-[calc(100vw-180px)]' : 'w-[60px]'} text-xl flex justify-center items-center flex-shrink-0 relative`}
-                >
-                    <p className='absolute w-max top-20 left-[10px]'>餐饮</p>
-                    <p className='polp font-bold tracking-[3px]'>Food</p>
-                </div>
-            </Link>
-            <Link to='/retail'>
-                <div 
-                    onClick={() => handlePage('retail')} ref={cRef} 
-                    className={`bg-red-500 ${currentPage === null ? 'h-0' : 'h-full'} ${currentPage === 'retail' ? 'w-[calc(100vw-180px)]' : 'w-[60px]'} text-xl flex justify-center items-center flex-shrink-0 relative`}
-                >
-                    <p className='absolute w-max top-20 right-0 left-0 mr-auto ml-auto'>購物</p>
-                    <p className='polp font-bold tracking-[3px]'>Retail</p>
-                </div>
-            </Link>
-            <Link to='/community'>
-                <div 
-                    onClick={()=> handlePage('comm')} ref={dRef} 
-                    className={`bg-yellow-500 ${currentPage === null ? 'h-0' : 'h-full'} ${currentPage === 'comm' ? 'w-[calc(100vw-180px)]' : 'w-[60px]'} text-xl flex justify-center items-center flex-shrink-0 relative`}
-                >
-                    <p className='absolute w-max top-20 right-0 left-0 mr-auto ml-auto'>文化</p>
-                    <p className='polp font-bold tracking-[3px]'>Community</p>
-                </div>
-            </Link>
+            {pgData.map((page) => {
+                return(
+                    <LinkStrip linkObj={page} handlePage={handlePage} currentPage={currentPage} />  
+                )}
+            )}
 
             {isModal && 
                 <Modal setIsModal={setIsModal}/>

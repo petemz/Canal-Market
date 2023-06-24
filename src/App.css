@@ -111,7 +111,8 @@
 }
 
 .polp {
-    writing-mode: vertical-lr;   
+    writing-mode: vertical-lr;  
+    background-image: var(); 
 }
 
 @keyframes inAnimation {
@@ -142,4 +143,3 @@
 select option {
     height: 200px;
 }
-

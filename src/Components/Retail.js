@@ -1,24 +1,18 @@
-import { Link } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
-import { gsap, Power1 } from 'gsap';
 import {Context} from "../Context"
 import { useContext } from "react"
 import Modal from './Modal';
 import Tailend from './Tailend';
-import comm from '../Assets/comm.jpg';
-import logo from '../Assets/logo.svg'
+import usePageTransition from './usePageTrans';
+import LinkStrip from './LinkStrip';
 
-//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import comm from '../Assets/comm.jpg';
 
 const Retail = () => {
     const [isModal, setIsModal] = useState(false)
     const hoverRef = useRef(null);
     const [visible, setVisible] = useState(false)
-    //const [hoverImg, setHoverImg] = useState('')
-
-    const {currentPage, setCurrentPage} = useContext(Context)
-    const [isExpanded, setIsExpanded] = useState(false)
-
+    
     const items = [
         {item: 'Design Objects', vendor: 'American Design Club'},
         {item: 'Jewelry', vendor: 'Beeshaus & Raum NYC'},
@@ -36,14 +30,10 @@ const Retail = () => {
         {item: 'Sustainable lifestyle store', vendor: 'Siizu'},
         {item: 'Jewelry', vendor: 'Swagychic'},
     ]
-
     const handleShow = (img) => {
-        //setHoverImg(img)
         setVisible(true)
     }
-
     const [width, setWidth] = useState(0)
-  
     useEffect(() => {
         const handleResize = () => {
             setWidth(hoverRef.current.offsetWidth)
@@ -55,7 +45,6 @@ const Retail = () => {
             window.removeEventListener('resize', handleResize)
         }
     })
-    
     const mountedStyle = { 
         position: 'absolute',
         top: Math.floor(Math.random() * (window.innerHeight - 450)),
@@ -71,94 +60,28 @@ const Retail = () => {
         animation: "outAnimation 1200ms ease-out",
     }
 
-    const aRef = useRef(null)
-    const bRef = useRef(null)
-    const cRef = useRef(null)
-    const dRef = useRef(null)
 
-    
+    const {currentPage, setCurrentPage} = useContext(Context)
 
-    function pop (params) {
-        let zRef
-            
-        if (currentPage === 'home') {
-            zRef = bRef
-        } else if (currentPage === 'food') {
-            zRef = cRef 
-        } else if (currentPage === 'comm') {
-            zRef = dRef
-        }
+    const commRef = useRef(null)
+    const homeRef = useRef(null)
+    const foodRef = useRef(null)
+    const retailRef = useRef(null)
 
-        return zRef
-    }
+    const pgData = [
+        {name: 'home', ref: homeRef, color: 'bg-white'},
+        {name: 'food', ref: foodRef, symb: '餐饮',  color: 'bg-blue-400'}, 
+        {name: 'community', ref: commRef, symb: '文化', color: 'bg-yellow-500'}
+    ]
 
-    console.log(pop())
-
-    const handlePage = (page) => {
-        setCurrentPage('retail')
-    }
-
-    useEffect(() => {
-        const timeline = gsap.timeline();
-
-        if (currentPage !== null) {
-            timeline.to(aRef.current, {
-                width: "calc(100vw - 180px)",
-                duration: 0.01,
-                delay: 0.1,
-            })
-
-            timeline.from(aRef.current.children, {
-                opacity: 0,
-                delay: 1,
-                duration: 0.5,
-                ease: Power1.easeInOut,
-            });
-        
-
-            gsap.to(pop().current, {
-                width: '60px',
-                duration: 1,
-                delay: 0.1,
-            })
-
-            setTimeout(() => {setIsExpanded(true)}, 400)
-        } else if (currentPage === null) {
-            timeline
-            .to(dRef.current, {height: '100%', duration: 0.8, stagger: 0.2 }, )
-            .to(cRef.current, {height: '100%', duration: 0.7, stagger: 0.1}, '<0.1')
-            .to(bRef.current, {height: '100%', duration: 0.6 }, '<0.1')
-        }
-    }, [])
-
-    
-    useEffect(() => {
-        if (isExpanded) {
-          setCurrentPage('retail');
-        }
-    }, [])
+    const { handlePage, isExpanded } = usePageTransition('retail', pgData, currentPage, setCurrentPage, retailRef);
 
     return (
         <div className="home bg-red-500 h-full flex">
-            <Link to='/'>
-                <div 
-                    onClick={()=> handlePage('food')} ref={bRef}  
-                    className={`bg-white ${currentPage === 'home' ? 'w-[calc(100vw-180px)]' : 'w-[60px]'}  ${currentPage === null ? 'h-0' : 'h-full'} relative`}
-                >
-                    <img className='absolute top-16 left-[7%]' src={logo} alt="Logo" />
-                </div>
-            </Link>
-            <Link to='/food'>
-                <div 
-                    onClick={()=> handlePage('food')} ref={cRef}  
-                    className={`bg-blue-400 ${currentPage === null ? 'h-0' : 'h-full'} ${currentPage === 'food' ? 'w-[calc(100vw-180px)]' : 'w-[60px]'} text-xl flex justify-center items-center flex-shrink-0 relative`}
-                >
-                    <p className='absolute w-max top-20 left-[10px]'>餐饮</p>
-                    <p className='polp font-bold tracking-[3px]'>Food</p>
-                </div>
-            </Link>
+            <LinkStrip linkObj={pgData[0]} handlePage={handlePage} currentPage={currentPage} />
+            <LinkStrip linkObj={pgData[1]} handlePage={handlePage} currentPage={currentPage} />
 
-            <div ref={aRef}  className={` h-full overflow-y-scroll ${currentPage === null ? 'w-[100vw] px-16' : 'w-[60px]'}  ${isExpanded ? 'px-16' : ''} pt-40`}>
+            <div ref={retailRef}  className={` h-full overflow-y-scroll ${currentPage === null ? 'w-[100vw] px-16' : 'w-[60px]'}  ${isExpanded ? 'px-16' : ''} pt-40`}>
             <div className='flex justify-between mb-20'>
                     <div className='flex flex-col opacity-30 tracking-widest items-center'>
                         <p className='[writing-mode:vertical-lr]'>Retail</p>
@@ -255,15 +178,7 @@ const Retail = () => {
                 <Tailend setIsModal={setIsModal}/>
             </div>
 
-            <Link to='/community'>
-                <div 
-                    onClick={()=> handlePage('comm')} ref={dRef} 
-                    className={`bg-yellow-500 ${currentPage === null ? 'h-0' : 'h-full'} ${currentPage === 'comm' ? 'w-[calc(100vw-180px)]' : 'w-[60px]'} text-xl flex justify-center items-center flex-shrink-0 relative`}
-                >
-                    <p className='absolute w-max top-20 right-0 left-0 mr-auto ml-auto'>文化</p>
-                    <p className='polp font-bold tracking-[3px]'>Community</p>
-                </div>
-            </Link>
+            <LinkStrip linkObj={pgData[2]} handlePage={handlePage} currentPage={currentPage} />
 
             {isModal && 
                 <Modal setIsModal={setIsModal}/>
