@@ -68,13 +68,13 @@ const Home = () => {
             .to(cRef.current, {height: '100%', duration: 0.7, stagger: 0.1}, '<0.1')
             .to(bRef.current, {height: '100%', duration: 0.6 }, '<0.1')
         }
-    })
+    }, [])
 
     useEffect(() => {
         if (isExpanded) {
           setCurrentPage('home');
         }
-    });
+    }, [])
 
     return (
         <div className="home h-full flex">

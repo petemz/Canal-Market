@@ -129,14 +129,14 @@ const Retail = () => {
             .to(cRef.current, {height: '100%', duration: 0.7, stagger: 0.1}, '<0.1')
             .to(bRef.current, {height: '100%', duration: 0.6 }, '<0.1')
         }
-    })
+    }, [])
 
     
     useEffect(() => {
         if (isExpanded) {
           setCurrentPage('retail');
         }
-    })
+    }, [])
 
     return (
         <div className="home bg-red-500 h-full flex">

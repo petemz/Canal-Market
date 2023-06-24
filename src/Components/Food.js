@@ -71,9 +71,7 @@ const Food = () => {
     const aRef = useRef(null)
     const bRef = useRef(null)
     const cRef = useRef(null)
-    const dRef = useRef(null)
-
-    
+    const dRef = useRef(null)    
 
     function pop (params) {
         let zRef
@@ -126,14 +124,14 @@ const Food = () => {
             .to(cRef.current, {height: '100%', duration: 0.7, stagger: 0.1}, '<0.1')
             .to(bRef.current, {height: '100%', duration: 0.6 }, '<0.1')
         }
-    })
+    }, [])
 
     
     useEffect(() => {
         if (isExpanded) {
           setCurrentPage('food');
         }
-    })
+    }, [])
 
     return (
         <div className="home bg-blue-400 h-full flex">
