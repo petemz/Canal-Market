@@ -26,7 +26,7 @@ const Modal = ({ setIsModal }) => {
             setIsModal(false)
           }
         }
-    }, [])
+    })
 
     return (
         <div className='h-full overflow-y-scroll w-full -md:px-32 -md:py-14 fixed bg-black bg-opacity-50 z-50'>

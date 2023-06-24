@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef,} from 'react';
+import { gsap, Power1 } from 'gsap';
+import {Context} from "../Context"
+import { useContext } from "react"
 import Modal from './Modal';
 import Tailend from './Tailend';
 import myImage from '../Assets/home-main-xz2.jpg';
@@ -12,15 +15,66 @@ import comm from '../Assets/comm.jpg';
 const Home = () => {
     const [isModal, setIsModal] = useState(false)
 
-    const [isExpanded, setIsExpanded] = useState(false);
+    const {currentPage, setCurrentPage} = useContext(Context)
+    const [isExpanded, setIsExpanded] = useState(false)
+
+    const aRef = useRef(null)
+    const bRef = useRef(null)
+    const cRef = useRef(null)
+    const dRef = useRef(null)
+
+    let zRef
+
+    if (currentPage === 'food') {
+        zRef = bRef
+    } else if (currentPage === 'retail') {
+        zRef = cRef 
+    } else if (currentPage === 'comm') {
+        zRef = dRef
+    }
+
+    const handlePage = () => {
+        setCurrentPage('home')
+    }
 
     useEffect(() => {
-        handleToggleWidth()
-    }, [])
+        const timeline = gsap.timeline();
 
-    const handleToggleWidth = () => {
-        setIsExpanded(!isExpanded);
-    }
+        if (currentPage !== null) {
+
+            timeline.to(aRef.current, {
+                width: "calc(100vw - 180px)",
+                duration: 0.01,
+                delay: 0.1,
+            })
+
+            timeline.from(aRef.current.children, {
+                opacity: 0,
+                delay: 1,
+                duration: 0.5,
+                ease: Power1.easeInOut,
+            });
+
+            gsap.to(zRef.current, {
+                width: '60px',
+                duration: 1,
+                delay: 0.1,
+            })
+
+            setTimeout(() => {setIsExpanded(true)}, 400)
+        } else if (currentPage === null) {
+            timeline
+            .to(dRef.current, {height: '100%', duration: 0.8, stagger: 0.2 }, )
+            .to(cRef.current, {height: '100%', duration: 0.7, stagger: 0.1}, '<0.1')
+            .to(bRef.current, {height: '100%', duration: 0.6 }, '<0.1')
+        }
+    })
+
+    useEffect(() => {
+        if (isExpanded) {
+          setCurrentPage('home');
+        }
+    });
 
     return (
         <div className="home h-full flex">
@@ -60,7 +114,7 @@ const Home = () => {
                     </g>
                 </svg>
             </div>
-            <div onClick={handleToggleWidth} className={` ${isExpanded ? 'w-full' : 'w-[60px] px-0'} sox bg-white h-full  overflow-y-scroll px-16 pt-64`}>
+            <div ref={aRef}  className={`div-a bg-white h-full overflow-y-scroll ${currentPage === null ? 'w-[100vw] px-16' : 'w-[60px]'}  ${isExpanded ? 'px-16' : ''} pt-64`}>
                 <p className='mb-32 text-[75px] font-medium leading-[85px]'>Canal Street Market is a carefully curated retail market, food hall & community space open year-round at 265 Canal Street. Support Small Business this weekend!</p>
                 
                 <div className='mx-[-64px]'>
@@ -115,29 +169,37 @@ const Home = () => {
                 <Tailend setIsModal={setIsModal}/>
             </div>
 
-            {isModal && 
-                <Modal setIsModal={setIsModal}/>
-            }
-
             <Link to='/food'>
-                <div className={`${isExpanded ? 'w-[60px]' : 'w-[calc(100vw-180px)]'} sox bg-blue-400 h-full text-xl flex justify-center items-center flex-shrink-0 relative`}>
-                    <p className='absolute w-max top-20 right-0 left-0 mr-auto ml-auto'>餐饮</p>
+                <div 
+                    onClick={()=> handlePage('food')} ref={bRef}  
+                    className={`bg-blue-400 ${currentPage === null ? 'h-0' : 'h-full'} ${currentPage === 'food' ? 'w-[calc(100vw-180px)]' : 'w-[60px]'} text-xl flex justify-center items-center flex-shrink-0 relative`}
+                >
+                    <p className='absolute w-max top-20 left-[10px]'>餐饮</p>
                     <p className='polp font-bold tracking-[3px]'>Food</p>
                 </div>
             </Link>
-
             <Link to='/retail'>
-                <div className="bg-red-500 h-full w-[60px] text-xl flex justify-center items-center flex-shrink-0 relative">
+                <div 
+                    onClick={() => handlePage('retail')} ref={cRef} 
+                    className={`bg-red-500 ${currentPage === null ? 'h-0' : 'h-full'} ${currentPage === 'retail' ? 'w-[calc(100vw-180px)]' : 'w-[60px]'} text-xl flex justify-center items-center flex-shrink-0 relative`}
+                >
                     <p className='absolute w-max top-20 right-0 left-0 mr-auto ml-auto'>購物</p>
                     <p className='polp font-bold tracking-[3px]'>Retail</p>
                 </div>
             </Link>
             <Link to='/community'>
-                <div className="bg-yellow-500 h-full w-[60px] text-xl flex justify-center items-center flex-shrink-0 relative">
+                <div 
+                    onClick={()=> handlePage('comm')} ref={dRef} 
+                    className={`bg-yellow-500 ${currentPage === null ? 'h-0' : 'h-full'} ${currentPage === 'comm' ? 'w-[calc(100vw-180px)]' : 'w-[60px]'} text-xl flex justify-center items-center flex-shrink-0 relative`}
+                >
                     <p className='absolute w-max top-20 right-0 left-0 mr-auto ml-auto'>文化</p>
                     <p className='polp font-bold tracking-[3px]'>Community</p>
                 </div>
             </Link>
+
+            {isModal && 
+                <Modal setIsModal={setIsModal}/>
+            }
         </div>
     )
 }
