@@ -49,8 +49,8 @@ const Retail = () => {
                     <p className='absolute right-0 text-6xl'>購物</p>
                 </div>
 
-                <div className="waves flex items-center py-28 my-28">
-                    <svg className='bounce-one w-1/4' width="117px" height="140px" viewBox="0 0 117 140" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+                <div className="waves-des flex items-center py-28 my-28">
+                    <svg className='bounce-one-des w-1/4' width="117px" height="140px" viewBox="0 0 117 140" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
                         <g id="R2" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                             <g id="1440_community" transform="translate(-386.000000, -3535.000000)" fill="#000000" fillRule="nonzero">
                                 <g id="Group-15" transform="translate(239.000000, 3173.000000)">
@@ -71,7 +71,7 @@ const Retail = () => {
                         <p className=' tracking-widest'>All under one roof!</p>
                     </div>
                     
-                    <svg transform="scale(1,-1) translate(-140px, 0)" className='bounce-two w-1/4'  width="117px" height="140px" viewBox="0 0 117 140" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+                    <svg transform="scale(1,-1) translate(-140px, 0)" className='bounce-two-des w-1/4'  width="117px" height="140px" viewBox="0 0 117 140" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
                         <g id="R2" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                             <g id="1440_community" transform="translate(-386.000000, -3535.000000)" fill="#000000" fillRule="nonzero">
                                 <g id="Group-15" transform="translate(239.000000, 3173.000000)">

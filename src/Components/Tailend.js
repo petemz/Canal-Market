@@ -1,7 +1,7 @@
 const Tailend = ({ setIsModal }) => {
     return (
         <>  
-            <div className='text-center flex flex-col justify-center items-center py-16 poll'>
+            <div className='text-center flex flex-col justify-center items-center py-16 slashes-des'>
                 <p className='text-[46px] mb-8 leading-[60px]'>Interested in becoming a vendor?</p>
                 <button
                     onClick={() => setIsModal(true)}

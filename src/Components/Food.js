@@ -118,8 +118,8 @@ const Food = () => {
                     {visible && <img className=' transition ease-in-out opacity-80' src={hoverImg} style={visible ? mountedStyle : unmountedStyle} alt=""/>}
                 </div>
 
-                <div className="waves flex items-center py-28 my-28">
-                    <svg className='bounce-one w-1/3' width="180px" height="180px" viewBox="0 0 88 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+                <div className="waves-des flex items-center py-28 my-28">
+                    <svg className='bounce-one-des w-1/3' width="180px" height="180px" viewBox="0 0 88 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
                         <g id="WH_new" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                             <g id="375-food" transform="translate(-143.000000, -2270.000000)" fill="#000000" fillRule="nonzero">
                                 <g id="Group" transform="translate(30.000000, 2195.000000)">
@@ -134,7 +134,7 @@ const Food = () => {
                         <p className=' tracking-widest'>All under one roof!</p>
                     </div>
 
-                    <svg className='bounce-two w-1/3 rotate-180' width="180px" height="180px" viewBox="0 0 88 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+                    <svg className='bounce-two-des w-1/3 rotate-180' width="180px" height="180px" viewBox="0 0 88 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
                         <g id="WH_new" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                             <g id="375-food" transform="translate(-143.000000, -2270.000000)" fill="#000000" fillRule="nonzero">
                                 <g id="Group" transform="translate(30.000000, 2195.000000)">

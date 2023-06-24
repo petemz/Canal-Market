@@ -95,7 +95,7 @@ const Home = () => {
 
                 <div className='py-16'>
                     <h2 className='px-14 mb-20 text-8xl text-center font-medium leading-[105px]'>Market <br/> Events</h2>
-                    <div className='zoom py-16 px-16 my-20 text-center tracking-widest grid grid-cols-3 gap-16'>
+                    <div className='loop-x-des py-16 px-16 my-20 text-center tracking-widest grid grid-cols-3 gap-16'>
                         <div>
                             <p>12/02</p>
                             <p>Small Business Retail Pop Up Weekend!</p>
@@ -111,12 +111,12 @@ const Home = () => {
                     </div>
 
                     <div className='grid grid-cols-2 gap-16 text-center'>
-                        <div className='loop px-6 w-full leading-[80px] text-6xl'>
+                        <div className='loop-des px-6 w-full leading-[80px] text-6xl'>
                             <a className='h-full block py-24'  href="https://www.google.com/maps/place/265+Canal+St,+New+York,+NY+10013/@40.7190077,-74.0030314,17z/data=!3m1!4b1!4m5!3m4!1s0x89c2598a1c3945dd:0x6b44c616961ec727!8m2!3d40.7190077!4d-74.0008427" target='blank'>
                                 <p>265 Canal St. New York, NY</p>
                             </a>
                         </div>
-                        <div className={`loop p-[1px]`}>
+                        <div className={`loop-des p-[1px]`}>
                             <a className='h-full' href="https://www.google.com/maps/place/265+Canal+St,+New+York,+NY+10013/@40.7190077,-74.0030314,17z/data=!3m1!4b1!4m5!3m4!1s0x89c2598a1c3945dd:0x6b44c616961ec727!8m2!3d40.7190077!4d-74.0008427" target='blank'>          
                                 <div className='h-full bg-cover' style={{backgroundImage: `url(${map})`}}>
                                 </div>

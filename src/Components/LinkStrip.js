@@ -23,7 +23,7 @@ const LinkStrip = ({linkObj, handlePage, currentPage}) => {
                     className={`${linkObj.color} ${currentPage === null ? 'h-0' : 'h-full'} ${currentPage === linkObj.name ? 'w-[calc(100vw-180px)]' : 'w-[60px]'} text-xl flex justify-center items-center flex-shrink-0 relative`}
                 > 
                     <p className='absolute w-max top-20 left-[10px]'>{linkObj.symb}</p>
-                    <p className='polp font-bold tracking-[3px]'>{firstLetterCap(linkObj.name)}</p>
+                    <p className='[writing-mode:vertical-lr] font-bold tracking-[3px]'>{firstLetterCap(linkObj.name)}</p>
                 </div>
             </Link>
     )

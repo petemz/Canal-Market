@@ -2,7 +2,7 @@
     font-family: oggFont;
     src: url(ogg-font/Ogg-Regular.ttf);
     font-weight: normal;
-  }
+}
 
 .App {
     height: 100vh;
@@ -13,7 +13,7 @@
     display: none;
 }
 
-.loop {
+.loop-des {
     background:
         linear-gradient(90deg, #000 50%, transparent 0) repeat-x,
         linear-gradient(90deg, #000 50%, transparent 0) repeat-x,
@@ -23,9 +23,8 @@
     background-position: 0 0, 0 100%, 0 0, 100% 0;
     animation: linearGradientMove .4s infinite linear;
     animation-play-state: paused; /* Add this line to pause the animation initially */
-}
-  
-.loop:hover {
+} 
+.loop-des:hover {
     animation-play-state: running; /* Change the animation state to running on hover */
 } 
 @keyframes linearGradientMove {
@@ -34,16 +33,7 @@
     }
 }
 
-.poll {
-    background: 
-        repeating-linear-gradient(-74deg,rgba(0,0,0,.2),rgba(0,0,0,.2) 1px,transparent 0,transparent 4px) repeat-x,
-        repeating-linear-gradient(-74deg,rgba(0,0,0,.2),rgba(0,0,0,.2) 1px,transparent 0,transparent 4px) repeat-x;
-    background-position: 0 0,0 100%;
-    background-size: 100% 12px,100% 12px;
-    
-}
-
-.zoom {
+.loop-x-des {
     background:
         linear-gradient(90deg, #000 50%, transparent 0) repeat-x,
         linear-gradient(90deg, #000 50%, transparent 0) repeat-x,
@@ -53,7 +43,16 @@
     animation: linearGradientMove .8s infinite linear;
 }
 
-.boom {
+.slashes-des {
+    background: 
+        repeating-linear-gradient(-74deg,rgba(0,0,0,.2),rgba(0,0,0,.2) 1px,transparent 0,transparent 4px) repeat-x,
+        repeating-linear-gradient(-74deg,rgba(0,0,0,.2),rgba(0,0,0,.2) 1px,transparent 0,transparent 4px) repeat-x;
+    background-position: 0 0,0 100%;
+    background-size: 100% 12px,100% 12px;
+    
+}
+
+.stripes-des {
     background-image: 
         repeating-linear-gradient(90deg,rgba(0,0,0,.2),rgba(0,0,0,.2) 1px,transparent 0,transparent 4px),
         repeating-linear-gradient(90deg,rgba(0,0,0,.2),rgba(0,0,0,.2) 1px,transparent 0,transparent 4px),
@@ -65,11 +64,11 @@
     box-shadow: -2px -8px 49px 10px rgba(0,0,0,.19);
 }
 
-.bounce-one {
-    animation: 1s infinite alternate bounce-one;
+.bounce-one-des {
+    animation: 1s infinite alternate bounce-one-des;
     animation-timing-function: ease-in-out;
 } 
-@keyframes bounce-one{
+@keyframes bounce-one-des{
     0% {
         transform: translateY(10%);
     }
@@ -78,11 +77,11 @@
     }
 }
 
-.bounce-two {
-    animation: 1s infinite alternate bounce-two;
+.bounce-two-des {
+    animation: 1s infinite alternate bounce-two-des;
     animation-timing-function: ease-in-out;
 }
-@keyframes bounce-two{
+@keyframes bounce-two-des{
     0% {
         transform: translateY(-10%);
     }
@@ -91,7 +90,7 @@
     }
 }
   
-.waves {
+.waves-des {
     background-image: repeating-linear-gradient(-45deg,#000,#000 1px,transparent 0,transparent 68px),repeating-linear-gradient(45deg,#000,#000 1px,transparent 0,transparent 68px),repeating-linear-gradient(-45deg,#000,#000 1px,transparent 0,transparent 71px),repeating-linear-gradient(45deg,#000,#000 1px,transparent 0,transparent 70px);
     background-position: 0 101%,0 101%,0 0,0 0;
     background-size: 93px 50px,93px 50px,100px 50px,100px 50px;
@@ -108,32 +107,6 @@
         background-position: 93px 101%,93px 101%,100px 0,100px 0;
     }
 
-}
-
-.polp {
-    writing-mode: vertical-lr;  
-    background-image: var(); 
-}
-
-@keyframes inAnimation {
-    0% {
-      opacity: 0;
-      visibility: hidden;
-    }
-    100% {
-      opacity: 1;
-      visibility: visible;
-    }
-}
-  
-  @keyframes outAnimation {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-      visibility: hidden;
-    }
 }
 
 .cars::-webkit-details-marker {

@@ -30,7 +30,7 @@ const Modal = ({ setIsModal }) => {
 
     return (
         <div className='h-full overflow-y-scroll w-full -md:px-32 -md:py-14 fixed bg-black bg-opacity-50 z-50'>
-            <div ref={modalRef} className='max-w-[1200px] boom px-16 py-20 w-full bg-white'>
+            <div ref={modalRef} className='max-w-[1200px] stripes-des px-16 py-20 w-full bg-white'>
                 <p className='text-center px-20 py-10 md:text-6xl text-[100px] leading-[101px]'>Become a Vendor at Canal Street Market.</p>
 
                 <div className="mb-12">

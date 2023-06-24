@@ -116,8 +116,8 @@ const Retail = () => {
                     {visible && <img className=' transition ease-in-out opacity-80' src={comm} style={visible ? mountedStyle : unmountedStyle} alt=""/>}
                 </div>
 
-                <div className="waves flex items-center py-28 my-28">
-                    <svg className='bounce-one w-1/4' width="140px" height="176px" viewBox="0 0 140 176" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+                <div className="waves-des flex items-center py-28 my-28">
+                    <svg className='bounce-one-des w-1/4' width="140px" height="176px" viewBox="0 0 140 176" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
                         <g id="R2" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                             <g id="1440_retail_detail" transform="translate(-309.000000, -3029.000000)" fill="#000000">
                                 <g id="Group-9" transform="translate(121.000000, 1821.000000)">
@@ -148,7 +148,7 @@ const Retail = () => {
                         <p className=' tracking-widest'>All under one roof!</p>
                     </div>
                     
-                    <svg className='bounce-two w-1/4' width="140px" height="176px" viewBox="0 0 140 176" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+                    <svg className='bounce-two-des w-1/4' width="140px" height="176px" viewBox="0 0 140 176" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
                         <g id="R2" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                             <g id="1440_retail_detail" transform="translate(-309.000000, -3029.000000)" fill="#000000">
                                 <g id="Group-9" transform="translate(121.000000, 1821.000000)">
