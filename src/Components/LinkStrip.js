@@ -8,16 +8,16 @@ const LinkStrip = ({linkObj, handlePage, currentPage}) => {
 
     return (
         linkObj.name === 'home' ? 
-            <Link to='/'>
+            <Link to='/' className=' sm:hidden'>
                 <div 
                     onClick={()=> handlePage(linkObj.name)} ref={linkObj.ref}  
-                    className={`bg-white ${currentPage === linkObj.name ? 'w-[calc(100vw-180px)]' : 'w-[60px]'}  ${currentPage === null ? 'h-0' : 'h-full'} relative`}
+                    className={` bg-white ${currentPage === linkObj.name ? 'w-[calc(100vw-180px)]' : 'w-[60px]'}  ${currentPage === null ? 'h-0' : 'h-full'} relative`}
                 >
                     <img className='absolute top-16 left-[7%]' src={logo} alt="Logo" />
                 </div>
             </Link>
         :
-            <Link to={`/${linkObj.name}`}>
+            <Link to={`/${linkObj.name}`} className=' sm:hidden'>
                 <div 
                     onClick={() => handlePage(linkObj.name)} ref={linkObj.ref}
                     className={`${linkObj.color} ${currentPage === null ? 'h-0' : 'h-full'} ${currentPage === linkObj.name ? 'w-[calc(100vw-180px)]' : 'w-[60px]'} text-xl flex justify-center items-center flex-shrink-0 relative`}

@@ -22,9 +22,9 @@ module.exports = {
       
       '-md': {'min': '900px'},
 
-      'sm': {'max': '750px'},
+      'sm': {'max': '800px'},
       
-      '-sm': {'min': '750px'},
+      '-sm': {'min': '801px'},
 
       'cpro': {'max': '780'},
 

@@ -14,7 +14,7 @@ const Tailend = ({ setIsModal }) => {
             <div className="py-16 pb-8">
                 <div className='mb-14 grid grid-cols-3 gap-16 font-semibold text-center tracking-5'>
                     <a href="#">
-                        <div className='h-48 loop flex flex-col tracking-widest justify-center items-center'>
+                        <div className='h-48 loop-des flex flex-col tracking-widest justify-center items-center'>
                             <div className='h-7 w-7 mb-4'>
                                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 64 64" style={{ enableBackground: 'new 0 0 512 512' }} xmlSpace="preserve">
                                     <g><path d="m62.542 7.093-5.635-5.635a4.99 4.99 0 0 0-7.05 0L4.52 46.796a1 1 0 0 0-.258.444L.035 62.737a1 1 0 0 0 1.228 1.228l15.497-4.226a1 1 0 0 0 .444-.258l45.338-45.339a4.99 4.99 0 0 0 0-7.049zM10.555 47.805l-3.372-.843L43.52 10.623l2.108 2.108zm1.307 1.521 35.18-35.18 2.813 2.811-35.181 35.181h-2.812zm4.334 4.119L51.269 18.37l2.108 2.108-36.338 36.338zM44.935 9.209l1.403-1.404 9.857 9.857-1.404 1.403zM5.934 48.71l3.928.982v3.445a1 1 0 0 0 1 1h3.445l.982 3.928-5.946 1.622a10.479 10.479 0 0 0-2-3.03 10.479 10.479 0 0 0-3.031-2zm-2.157 7.906a8.058 8.058 0 0 1 2.151 1.455 8.059 8.059 0 0 1 1.455 2.15l-4.958 1.353zm57.351-43.889-3.52 3.52-9.856-9.857 3.52-3.52a3.057 3.057 0 0 1 4.22 0l5.636 5.636a2.985 2.985 0 0 1 0 4.221z" fill="#000000" data-original="#000000"></path></g>
@@ -25,7 +25,7 @@ const Tailend = ({ setIsModal }) => {
                     </a>
 
                     <a href="#">
-                        <div className='h-48 loop flex flex-col tracking-widest justify-center items-center'>
+                        <div className='h-48 loop-des flex flex-col tracking-widest justify-center items-center'>
                             <div className='h-7 w-7 mb-4'>
                                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 24 24" style={{ enableBackground: 'new 0 0 512 512' }} xmlSpace="preserve">
                                     <g><path d="M.473 19.595a13.928 13.928 0 0 0 7.478 2.155c3.91 0 7.493-1.502 10.09-4.229 2.485-2.61 3.852-6.117 3.784-9.676.942-.806 2.05-2.345 2.05-3.845a.75.75 0 0 0-1.13-.647c-.885.52-1.692.656-2.522.423-1.695-1.652-4.218-2-6.344-.854-1.858 1-2.891 2.83-2.798 4.83A12.427 12.427 0 0 1 3.02 3.349a.75.75 0 0 0-1.226.1C.82 5.117.83 7.05 1.677 8.611a.78.78 0 0 0-.652.777 5.29 5.29 0 0 0 1.843 3.995.749.749 0 0 0-.192.777 5.384 5.384 0 0 0 3.047 3.264 8.732 8.732 0 0 1-4.756.794c-.784-.106-1.171.948-.494 1.377zm7.683-1.914c.561-.431.263-1.329-.441-1.344a3.912 3.912 0 0 1-3.072-1.598 5.29 5.29 0 0 0 1.024-.164c.761-.206.725-1.304-.048-1.459a3.85 3.85 0 0 1-2.917-2.62c.377.093.761.145 1.144.152.759.004 1.046-.969.427-1.376-1.395-.919-1.99-2.542-1.596-4.068a13.943 13.943 0 0 0 9.237 4.123.749.749 0 0 0 .767-.917c-.475-2.059.675-3.502 1.91-4.167 1.222-.66 3.184-.866 4.688.712.447.471 1.955.489 2.722.31-.344.648-.873 1.263-1.368 1.609a.75.75 0 0 0-.319.651c.161 3.285-1.063 6.551-3.358 8.96-2.312 2.427-5.509 3.764-9.004 3.764-1.39 0-2.753-.226-4.041-.662 1.54-.298 3.003-.95 4.245-1.906z" fill="#000000" data-original="#000000"></path></g>
@@ -36,7 +36,7 @@ const Tailend = ({ setIsModal }) => {
                     </a>
 
                     <a href="#">
-                        <div className='h-48 loop flex flex-col tracking-widest justify-center items-center'>
+                        <div className='h-48 loop-des flex flex-col tracking-widest justify-center items-center'>
                             <div className='h-7 w-7 mb-4'>
                                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 512.005 512.005" style={{ enableBackground: 'new 0 0 512 512'}} xmlSpace="preserve">
                                     <g>
