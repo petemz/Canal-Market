@@ -2,13 +2,13 @@ import { useState, useEffect, useRef, useContext } from 'react';
 import {Context} from "../Context"
 import Modal from './Modal';
 import Tailend from './Tailend';
-import Nav from './Nav';
 import usePageTransition from './usePageTrans';
 import LinkStrip from './LinkStrip';
 
 import food from '../Assets/food.jpg';
 import retail from '../Assets/retail.jpg';
 import comm from '../Assets/comm.jpg';
+import bakery from '../Assets/bakery-unsplash.jpg';
 
 const Food = () => {
     const {currentPage, setCurrentPage, isModal, setIsModal, isNav, setIsNav} = useContext(Context)
@@ -83,9 +83,9 @@ const Food = () => {
         <div className="home bg-blue-400 h-full flex">
             <LinkStrip linkObj={pgData[0]} handlePage={handlePage} currentPage={currentPage} />
 
-            <div ref={foodRef}  className={` h-full overflow-y-scroll ${currentPage === null ? 'w-[100vw] px-16' : 'w-[60px]'}  ${isExpanded ? 'px-16' : ''} pt-40`}>
-                <div className='flex justify-between mb-20'>
-                    <div className='flex flex-col opacity-30 tracking-widest items-center'>
+            <div ref={foodRef}  className={` h-full overflow-y-scroll ${currentPage === null ? 'w-[100vw] px-16' : 'w-[60px]'}  ${isExpanded ? 'px-16 ' : ''} sm:px-7 pt-40 sm:pt-24`}>
+                <div className='flex justify-between sm:justify-end mb-20'>
+                    <div className='sm:hidden flex flex-col opacity-30 tracking-widest items-center'>
                         <p className='[writing-mode:vertical-lr]'>Food </p>
                         <svg className='rotate-[-90deg] w-5 h-5 mt-5' xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 512 512" style={{ enableBackground: "new 0 0 512 512"}} xmlSpace="preserve">
                             <g transform="matrix(1,0,0,1,0,0)"><path d="m0 256 320 160.6L221.536 256 320 95.4z" fill="currentColor" data-original="#88d8c9"></path><path d="m0 256 320 160.6L221.536 256H126.76z" fill="currentColor" data-original="#32bea6"></path><path d="M432 240h80v32h-80zM286.592 240h80v32h-80z" fill="currentColor" data-original="#415e72"></path></g>
@@ -95,13 +95,13 @@ const Food = () => {
                     <p className='text-right'>Food Hall Hours: <br/> Mon - Sun: 11:00AM - 8:00PM</p>
                 </div>
 
-                <div className='flex justify-between relative mb-28'>
-                    <h1 className='text-[200px] leading-[192px]'>The <br/> Food <br/> Hall</h1>
+                <div className='flex sm:flex-col justify-between relative mb-28'>
+                    <h1 className='text-[200px] sm:text-6xl leading-[192px] flex'>The <br className='sm:hidden'/> Food <br className='sm:hidden'/> Hall</h1>
                     <img className='h-[450px] mt-24' src={comm} alt="" />
-                    <p className='absolute right-0 text-6xl'>餐饮</p>
+                    <p className='absolute right-0 text-6xl sm:hidden'>餐饮</p>
                 </div>
 
-                <div ref={hoverRef} className='grid grid-cols-3 gap-16 relative'>
+                <div ref={hoverRef} className='grid grid-cols-3 lg:grid-cols-2 sm:grid-cols-1 gap-16 sm:gap-8 relative'>
                     {foods.map(food => {
                         return (
                             <div 
@@ -110,16 +110,16 @@ const Food = () => {
                                 onMouseLeave={() => setVisible(false)}
                             >
                                 <p className=''>{food.type}</p>
-                                <p className='text-3xl mt-5'>{food.vendor}</p>
+                                <p className='text-3xl mt-5 sm:mt-2'>{food.vendor}</p>
                             </div>
                         )}
                     )}
 
-                    {visible && <img className=' transition ease-in-out opacity-80' src={hoverImg} style={visible ? mountedStyle : unmountedStyle} alt=""/>}
+                    {visible && <img className='sm:hidden transition ease-in-out opacity-80' src={hoverImg} style={visible ? mountedStyle : unmountedStyle} alt=""/>}
                 </div>
 
-                <div className="waves-des flex items-center py-28 my-28">
-                    <svg className='bounce-one-des w-1/3' width="180px" height="180px" viewBox="0 0 88 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+                <div className="waves-des flex sm:flex-col justify-between items-center  -lg:px-[5%] sm:py-14 py-28 my-28">
+                    <svg className='bounce-one-des w-[180px] sm:w-24' viewBox="0 0 88 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
                         <g id="WH_new" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                             <g id="375-food" transform="translate(-143.000000, -2270.000000)" fill="#000000" fillRule="nonzero">
                                 <g id="Group" transform="translate(30.000000, 2195.000000)">
@@ -129,12 +129,12 @@ const Food = () => {
                         </g>
                     </svg>
 
-                    <div className='w-1/3 text-center '>
-                        <p className=' text-[100px] leading-[100px] mb-7'>The Best of NYC</p>
+                    <div className='w-1/2 sm:w-full sm:my-12 text-center '>
+                        <p className=' text-[100px] sm:text-6xl leading-[100px] sm:leading-normal mb-7 sm:mb-4'>The <br className='sm:hidden'/> Best of <br className='sm:hidden'/> NYC</p>
                         <p className=' tracking-widest'>All under one roof!</p>
                     </div>
-
-                    <svg className='bounce-two-des w-1/3 rotate-180' width="180px" height="180px" viewBox="0 0 88 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+      
+                    <svg className='bounce-two-des w-[180px] sm:w-24' viewBox="0 0 88 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
                         <g id="WH_new" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                             <g id="375-food" transform="translate(-143.000000, -2270.000000)" fill="#000000" fillRule="nonzero">
                                 <g id="Group" transform="translate(30.000000, 2195.000000)">
@@ -155,10 +155,6 @@ const Food = () => {
 
             {isModal && 
                 <Modal setIsModal={setIsModal}/>
-            }
-
-            {isNav && 
-                <Nav setIsModal={setIsModal} setIsNav={setIsNav}/>
             }
 
             {isNav ? 

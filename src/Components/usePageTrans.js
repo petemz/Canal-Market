@@ -41,9 +41,11 @@ const usePageTransition = (page, pgData, currentPage, setCurrentPage, refA) => {
   useEffect(() => {
       const timeline = gsap.timeline();
 
+      const screenWidth = window.innerWidth;
+
       if (currentPage !== null) {
         timeline.to(refA.current, {
-          width: "calc(100vw - 180px)",
+          width: width > 800 ? "calc(100vw - 180px)" : "100vw",
           duration: 0.01,
           delay: 0.1,
         });

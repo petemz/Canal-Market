@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import logo from '../Assets/logo.svg'
+import Logo from "../Assets/Logo"
 
 const LinkStrip = ({linkObj, handlePage, currentPage}) => {
     const firstLetterCap = (word) => {

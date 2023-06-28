@@ -31,7 +31,7 @@ const Home = () => {
 
     return (
         <div className="home h-full flex">
-            <div className='absolute top-16 left-14'>
+            <div className='absolute top-16 sm:top-8 left-14 sm:left-7'>
                 <svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg">
                     <defs></defs>
                     <g id="R2" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -68,18 +68,18 @@ const Home = () => {
                 </svg>
             </div>
 
-            <div ref={homeRef}  className={`div-a bg-white h-full overflow-y-scroll ${currentPage === null ? 'w-[100vw] px-16' : 'w-[60px]'}  ${isExpanded ? 'px-16' : ''} pt-64`}>
-                <p className='mb-32 text-[75px] font-medium leading-[85px]'>Canal Street Market is a carefully curated retail market, food hall & community space open year-round at 265 Canal Street. Support Small Business this weekend!</p>
+            <div ref={homeRef}  className={`div-a bg-white h-full overflow-y-scroll ${currentPage === null ? 'w-[100vw] px-16' : 'w-[60px]'}  ${isExpanded ? 'px-16' : ''} sm:px-8 pt-64 sm:pt-40`}>
+                <p className='mb-32 sm:mb-28 text-[75px] sm:text-6xl font-medium leading-[85px] sm:leading-[70px]'>Canal Street Market is a carefully curated retail market, food hall & community space open year-round at 265 Canal Street. Support Small Business this weekend!</p>
                 
                 <div className='mx-[-64px]'>
                     <img className='w-full' src={myImage} alt='A stall'/>
                 </div>
                     
-                <h2 className='mt-32 mb-14 text-[115px] leading-[150px]'>A New Kind <br/> of Market</h2>
+                <h2 className='mt-32 sm:mt-24 mb-14 text-[115px] sm:text-center sm:text-[75px] leading-[150px] sm:leading-[90px]'>A New Kind <br className='sm:hidden'/> of Market</h2>
                 
-                <div className='text-sm tracking-widest grid grid-cols-3 gap-16 mb-40'>
-                    <div className=''>
-                        <img src={food} alt="" />
+                <div className='text-sm tracking-widest grid grid-cols-3 lg:grid-cols-2 xs:grid-cols-1 gap-16 mb-40 sm:mb-16'>
+                    <div className='w-full'>
+                        <img src={food} alt="" className='w-full' />
                         <p className='mt-6'>Merging retail, food, art, and culture, Canal Street Market highlights top retail and design concepts, restaurants, and up-and-coming players in the downtown New York City community.</p>
                     </div>
                     <div className=''>
@@ -93,8 +93,8 @@ const Home = () => {
                 </div>
 
                 <div className='py-16'>
-                    <h2 className='px-14 mb-20 text-8xl text-center font-medium leading-[105px]'>Market <br/> Events</h2>
-                    <div className='loop-x-des py-16 px-16 my-20 text-center tracking-widest grid grid-cols-3 gap-16'>
+                    <h2 className='px-14 mb-20 text-8xl sm:text-7xl xs:text-6xl text-center font-medium leading-[105px]'>Market <br/> Events</h2>
+                    <div className='loop-x-des py-16 px-16 lg:px-8 sm:px-2 my-20 text-center tracking-widest grid grid-cols-3 lg:grid-cols-2 xs:grid-cols-1 gap-16'>
                         <div>
                             <p>12/02</p>
                             <p>Small Business Retail Pop Up Weekend!</p>
@@ -109,13 +109,13 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className='grid grid-cols-2 gap-16 text-center'>
-                        <div className='loop-des px-6 w-full leading-[80px] text-6xl'>
+                    <div className='grid grid-cols-2 lg:grid-cols-1 gap-16 text-center'>
+                        <div className='loop-des px-6 w-full leading-[80px] text-6xl sm:text-5xl'>
                             <a className='h-full block py-24'  href="https://www.google.com/maps/place/265+Canal+St,+New+York,+NY+10013/@40.7190077,-74.0030314,17z/data=!3m1!4b1!4m5!3m4!1s0x89c2598a1c3945dd:0x6b44c616961ec727!8m2!3d40.7190077!4d-74.0008427" target='blank'>
                                 <p>265 Canal St. New York, NY</p>
                             </a>
                         </div>
-                        <div className={`loop-des p-[1px]`}>
+                        <div className={`loop-des lg:h-96 sm:h-72 p-[1px]`}>
                             <a className='h-full' href="https://www.google.com/maps/place/265+Canal+St,+New+York,+NY+10013/@40.7190077,-74.0030314,17z/data=!3m1!4b1!4m5!3m4!1s0x89c2598a1c3945dd:0x6b44c616961ec727!8m2!3d40.7190077!4d-74.0008427" target='blank'>          
                                 <div className='h-full bg-cover' style={{backgroundImage: `url(${map})`}}>
                                 </div>
@@ -135,10 +135,6 @@ const Home = () => {
 
             {isModal && 
                 <Modal setIsModal={setIsModal}/>
-            }
-
-            {isNav && 
-                <Nav setIsModal={setIsModal} setIsNav={setIsNav}/>
             }
 
             {isNav ? 

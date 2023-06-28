@@ -1,20 +1,20 @@
 const Tailend = ({ setIsModal }) => {
     return (
         <>  
-            <div className='text-center flex flex-col justify-center items-center py-16 slashes-des'>
-                <p className='text-[46px] mb-8 leading-[60px]'>Interested in becoming a vendor?</p>
+            <div className='text-center flex flex-col justify-center items-center py-16 sm:py-10 slashes-des'>
+                <p className='text-[46px] sm:text-3xl mb-8 leading-[60px]'>Interested in becoming a vendor?</p>
                 <button
                     onClick={() => setIsModal(true)}
-                    className='transition ease-in-out duration-300 hover:bg-black hover:text-white border tracking-widest font-semibold border-black py-3 px-10'
+                    className='transition ease-in-out duration-300 hover:bg-black hover:text-white sm:w-full border tracking-widest font-semibold border-black py-3 sm:py-5 px-10'
                 >
                     click here
                 </button>
             </div>
 
-            <div className="py-16 pb-8">
-                <div className='mb-14 grid grid-cols-3 gap-16 font-semibold text-center tracking-5'>
+            <div className="py-16 xs:py-10 pb-8 tracking-widest [word-spacing:4px]">
+                <div className='mb-14 grid grid-cols-3 sm:grid-cols-1 gap-16 lg:gap-10 text-sm font-semibold text-center tracking-5'>
                     <a href="#">
-                        <div className='h-48 loop-des flex flex-col tracking-widest justify-center items-center'>
+                        <div className='h-48 sm:h-36 loop-des flex flex-col tracking-widest justify-center items-center'>
                             <div className='h-7 w-7 mb-4'>
                                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 64 64" style={{ enableBackground: 'new 0 0 512 512' }} xmlSpace="preserve">
                                     <g><path d="m62.542 7.093-5.635-5.635a4.99 4.99 0 0 0-7.05 0L4.52 46.796a1 1 0 0 0-.258.444L.035 62.737a1 1 0 0 0 1.228 1.228l15.497-4.226a1 1 0 0 0 .444-.258l45.338-45.339a4.99 4.99 0 0 0 0-7.049zM10.555 47.805l-3.372-.843L43.52 10.623l2.108 2.108zm1.307 1.521 35.18-35.18 2.813 2.811-35.181 35.181h-2.812zm4.334 4.119L51.269 18.37l2.108 2.108-36.338 36.338zM44.935 9.209l1.403-1.404 9.857 9.857-1.404 1.403zM5.934 48.71l3.928.982v3.445a1 1 0 0 0 1 1h3.445l.982 3.928-5.946 1.622a10.479 10.479 0 0 0-2-3.03 10.479 10.479 0 0 0-3.031-2zm-2.157 7.906a8.058 8.058 0 0 1 2.151 1.455 8.059 8.059 0 0 1 1.455 2.15l-4.958 1.353zm57.351-43.889-3.52 3.52-9.856-9.857 3.52-3.52a3.057 3.057 0 0 1 4.22 0l5.636 5.636a2.985 2.985 0 0 1 0 4.221z" fill="#000000" data-original="#000000"></path></g>
@@ -25,7 +25,7 @@ const Tailend = ({ setIsModal }) => {
                     </a>
 
                     <a href="#">
-                        <div className='h-48 loop-des flex flex-col tracking-widest justify-center items-center'>
+                        <div className='h-48 sm:h-36 loop-des flex flex-col tracking-widest justify-center items-center'>
                             <div className='h-7 w-7 mb-4'>
                                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 24 24" style={{ enableBackground: 'new 0 0 512 512' }} xmlSpace="preserve">
                                     <g><path d="M.473 19.595a13.928 13.928 0 0 0 7.478 2.155c3.91 0 7.493-1.502 10.09-4.229 2.485-2.61 3.852-6.117 3.784-9.676.942-.806 2.05-2.345 2.05-3.845a.75.75 0 0 0-1.13-.647c-.885.52-1.692.656-2.522.423-1.695-1.652-4.218-2-6.344-.854-1.858 1-2.891 2.83-2.798 4.83A12.427 12.427 0 0 1 3.02 3.349a.75.75 0 0 0-1.226.1C.82 5.117.83 7.05 1.677 8.611a.78.78 0 0 0-.652.777 5.29 5.29 0 0 0 1.843 3.995.749.749 0 0 0-.192.777 5.384 5.384 0 0 0 3.047 3.264 8.732 8.732 0 0 1-4.756.794c-.784-.106-1.171.948-.494 1.377zm7.683-1.914c.561-.431.263-1.329-.441-1.344a3.912 3.912 0 0 1-3.072-1.598 5.29 5.29 0 0 0 1.024-.164c.761-.206.725-1.304-.048-1.459a3.85 3.85 0 0 1-2.917-2.62c.377.093.761.145 1.144.152.759.004 1.046-.969.427-1.376-1.395-.919-1.99-2.542-1.596-4.068a13.943 13.943 0 0 0 9.237 4.123.749.749 0 0 0 .767-.917c-.475-2.059.675-3.502 1.91-4.167 1.222-.66 3.184-.866 4.688.712.447.471 1.955.489 2.722.31-.344.648-.873 1.263-1.368 1.609a.75.75 0 0 0-.319.651c.161 3.285-1.063 6.551-3.358 8.96-2.312 2.427-5.509 3.764-9.004 3.764-1.39 0-2.753-.226-4.041-.662 1.54-.298 3.003-.95 4.245-1.906z" fill="#000000" data-original="#000000"></path></g>
@@ -36,7 +36,7 @@ const Tailend = ({ setIsModal }) => {
                     </a>
 
                     <a href="#">
-                        <div className='h-48 loop-des flex flex-col tracking-widest justify-center items-center'>
+                        <div className='h-48 sm:h-36 loop-des flex flex-col tracking-widest justify-center items-center'>
                             <div className='h-7 w-7 mb-4'>
                                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 512.005 512.005" style={{ enableBackground: 'new 0 0 512 512'}} xmlSpace="preserve">
                                     <g>
@@ -50,10 +50,16 @@ const Tailend = ({ setIsModal }) => {
                     </a>
                 </div>
 
-                <div className='p-7 px-16 flex justify-between items-center loop'>
-                    <p className='text-[22px] mr-16 flex-shrink-0'>Stay up to date <br/> with our newsletter</p>
-                    
-                    <div className='relative w-full max-w-[700px] '>
+                <div className='p-7 px-16 sm:px-8 flex sm:flex-col justify-between items-center loop-des'>
+                    <p className='text-[22px] sm:hidden mr-16 flex-shrink-0'>Stay up to date <br/> with our newsletter</p>
+                    <div className="-sm:hidden mb-5 flex flex-col items-center">    
+                        <svg className="w-10 mb-2" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 512 512" style={{ enableBackground: 'new 0 0 512 512'}} xmlSpace="preserve">
+                            <g><path d="M467 76H45C20.238 76 0 96.149 0 121v270c0 24.86 20.251 45 45 45h422c24.762 0 45-20.149 45-45V121c0-24.857-20.248-45-45-45zm-6.91 30L267.624 299.094c-5.864 5.882-17.381 5.886-23.248 0L51.91 106h408.18zM30 385.485v-258.97L159.065 256 30 385.485zM51.91 406l128.334-128.752 42.885 43.025c17.574 17.631 48.175 17.624 65.743 0l42.885-43.024L460.09 406H51.91zM482 385.485 352.935 256 482 126.515v258.97z" fill="currentColor" dataOriginal="#000000"></path></g>
+                        </svg>
+                        <p className='text-sm font-semibold flex-shrink-0'>Get updates in your inbox</p>
+                    </div>
+
+                    <div className='relative w-full max-w-[700px]'>
                         <div className='h-6 w-6 top-0 bottom-0 m-auto right-8 absolute'>
                             <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 512 511" style={{ enableBackground: 'new 0 0 512 512'}} xmlSpace="preserve">
                                 <g transform="matrix(-1,-1.224646799147353e-16,1.224646799147353e-16,-1,511.9999999999999,512.9840087890625)"><path d="M143.871 512.484c-10.398 0-20.598-4.062-28.281-11.734l-97.961-97.754C6.262 391.652 0 376.562 0 360.504s6.262-31.152 17.629-42.496l97.96-97.754c11.513-11.492 28.665-14.887 43.696-8.652 15.012 6.226 24.711 20.742 24.711 36.976V340.5C342.801 340.5 472 211.3 472 52.496V20.5c0-11.047 8.953-20 20-20s20 8.953 20 20v31.996c0 87.613-34.117 169.984-96.07 231.938-61.953 61.949-144.32 96.07-231.934 96.07-22.059 0-40.004-17.945-40.004-40v-91.938a.85.85 0 0 0-.105-.043c-.012.016-.028.028-.043.043l-97.961 97.758A19.9 19.9 0 0 0 40 360.504a19.9 19.9 0 0 0 5.883 14.18l97.96 97.753.044.043c.035-.011.074-.023.105-.039v-21.937c0-11.047 8.957-20 20.004-20 11.043 0 20 8.953 20 20v21.922c0 16.234-9.7 30.75-24.71 36.976a40.16 40.16 0 0 1-15.415 3.082zm0 0" fill="#000000" data-original="#000000"></path></g>
@@ -64,7 +70,7 @@ const Tailend = ({ setIsModal }) => {
                 </div>
             </div>
 
-            <footer className='flex text-sm font-semibold justify-between mb-16'>
+            <footer className='flex text-sm sm:text-xs font-semibold justify-between mb-16'>
                 <div className='flex justify-between w-[550px]'>
                     <p>Copyright Ignis Realtors 2022</p>
                     <p>Privacy Policy</p>

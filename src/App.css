@@ -106,7 +106,24 @@
     100% {
         background-position: 93px 101%,93px 101%,100px 0,100px 0;
     }
-
+}
+@media only screen and (max-width: 800px) {
+    .waves-des {
+        background-image: repeating-linear-gradient(-45deg,#000,#000 1px,transparent 0,transparent 20px),repeating-linear-gradient(45deg,#000,#000 1px,transparent 0,transparent 20px),repeating-linear-gradient(-45deg,#000,#000 1px,transparent 0,transparent 20px),repeating-linear-gradient(45deg,#000,#000 1px,transparent 0,transparent 20px);
+        background-position: 0 100%,0 100%,0 0,0 0;
+        background-size: 29px 14px,29px 14px,29px 14px,29px 14px;
+        background-repeat: repeat-x;
+        animation: 1s infinite normal f;
+        animation-timing-function: linear;
+    }
+    @keyframes f{
+        0% {
+            background-position: 0 100%,0 100%,0 0,0 0;
+        }
+        100% {
+            background-position: 29px 100%,29px 100%,29px 0,29px 0;
+        }
+    }
 }
 
 .cars::-webkit-details-marker {

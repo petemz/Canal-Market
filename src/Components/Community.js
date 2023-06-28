@@ -97,10 +97,6 @@ const Retail = () => {
                 <Modal setIsModal={setIsModal}/>
             }
 
-            {isNav && 
-                <Nav setIsModal={setIsModal} setIsNav={setIsNav}/>
-            }
-
             {isNav ? 
                 <button onClick={() => setIsNav(false)} className='h-12 w-12 absolute z-50 -sm:hidden right-8 top-8 pl-3 pt-3 border border-black rounded-full'>
                     <svg className='h-5 w-5' xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 191.721 191.72" style={{enableBackground: 'new 0 0 512 512'}} xmlSpace="preserve">

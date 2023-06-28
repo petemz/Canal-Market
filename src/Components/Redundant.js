@@ -17,22 +17,17 @@ const Retail = () => {
     const hoverRef = useRef(null);
     const [visible, setVisible] = useState(false)
     
-    const items = [
-        {item: 'Design Objects', vendor: 'American Design Club'},
-        {item: 'Jewelry', vendor: 'Beeshaus & Raum NYC'},
-        {item: 'Jewelry', vendor: 'Beroep Tech'},
-        {item: 'Bonsai Shop', vendor: 'Dandy Farmer Bonsai Shop'},
-        {item: 'Fashion Apparel', vendor: 'Friend Of A Friend Studio'},
-        {item: 'Design Objects', vendor: 'Leibal'},
-        {item: 'K Pop Apparel and Merchandise', vendor: 'Mandu Apparel'},
-        {item: 'Home Goods', vendor: 'Mogutable'},
-        {item: 'Jewelry', vendor: 'Mottive'},
-        {item: 'Newstand and Magazines', vendor: 'Office Magazine Newstand'},
-        {item: 'Fashion Apparel', vendor: 'Preppy Trendy'},
-        {item: 'Sunglasses', vendor: 'Savage Anchor'},
-        {item: 'Jewelry', vendor: 'Seven 50'},
-        {item: 'Sustainable lifestyle store', vendor: 'Siizu'},
-        {item: 'Jewelry', vendor: 'Swagychic'},
+    const foods = [
+        {type: 'Khao Man Gai', vendor: 'Betong', img: comm}, 
+        {type: 'Coffee, Pastries & Smoothies', vendor:'Chinatown Del', img: food}, 
+        {type: 'Artisanal Chocolates', vendor: 'Daniel Corpuz Chocolatier', img: retail},
+        {type: 'Napoli Stylee Pizza', vendor: 'Enzo Bruni La Pizza Gourmet', img: food},
+        {type: 'Chinese Classics', vendor: 'Joe\'s Rice and Noodles', img: comm},
+        {type: 'Cantonese Steamed Rice Rolls', vendor: 'Joe\'s Steam Rice Roll', img: retail},
+        {type: 'Delicious Filipino Classics', vendor: 'Kabisera', img: food},
+        {type: 'Bingsoo Sundaes & Bubble Tea', vendor: 'Lazy Sundaes', img: comm},
+        {type: 'Sushi, Handrolls & Chirashi', vendor: 'Mastunori', img: retail},
+        {type: 'Filipino Inspired Taqueria', vendor: 'Mucho Sarap', img: food}
     ]
     const handleShow = (img) => {
         setVisible(true)
@@ -104,15 +99,15 @@ const Retail = () => {
                 </div>
 
                 <div ref={hoverRef} className='grid grid-cols-3 lg:grid-cols-2 sm:grid-cols-1 gap-16 sm:gap-8 relative'>
-                    {items.map(item => {
+                    {foods.map(food => {
                         return (
                             <div
-                                className='cursor-pointer z-10' key={item.vendor} 
-                                onMouseEnter={() => handleShow(item.img)}
+                                className='cursor-pointer z-10' key={food.vendor} 
+                                onMouseEnter={() => handleShow(food.img)}
                                 onMouseLeave={() => setVisible(false)}
                             >
-                                <p className=''>{item.item}</p>
-                                <p className='text-3xl mt-5 sm:mt-2'>{item.vendor}</p>
+                                <p className=''>{food.item}</p>
+                                <p className='text-3xl mt-5 sm:mt-2'>{food.vendor}</p>
                             </div>
                         )}
                     )}
