@@ -32,10 +32,10 @@ const Retail = () => {
                 )}
             )}
 
-            <div ref={commRef}  className={` h-full overflow-y-scroll ${currentPage === null ? 'w-[100vw] px-16' : 'w-[60px]'}  ${isExpanded ? 'px-16' : ''} pt-40`}>
-                <div className='flex justify-between mb-20'>
-                    <div className='flex flex-col opacity-50 tracking-widest items-center'>
-                        <p className='[writing-mode:vertical-lr]'>Commmunity</p>
+            <div ref={commRef}  className={` h-full overflow-y-scroll ${currentPage === null ? 'w-[100vw] px-16' : 'w-[60px]'}  ${isExpanded ? 'px-16' : ''} sm:px-7 pt-40 sm:pt-24`}>
+                <div className='flex w-full justify-between sm:justify-end mb-20'>
+                    <div className='sm:hidden flex flex-col opacity-50 tracking-widest items-center'>
+                        <p className='[writing-mode:vertical-lr] font-semibold'>Commmunity</p>
                         <svg className='rotate-[-90deg] w-5 h-5 mt-5' xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 512 512" style={{ enableBackground: "new 0 0 512 512"}} xmlSpace="preserve">
                             <g transform="matrix(1,0,0,1,0,0)"><path d="m0 256 320 160.6L221.536 256 320 95.4z" fill="currentColor" data-original="#88d8c9" ></path><path d="m0 256 320 160.6L221.536 256H126.76z" fill="currentColor" data-original="#32bea6" ></path><path d="M432 240h80v32h-80zM286.592 240h80v32h-80z" fill="currentColor" data-original="#415e72" ></path></g>
                         </svg>
@@ -44,9 +44,9 @@ const Retail = () => {
                     <p>Our mixed-use space hosts <br/> ongoing events, podcasts <br/> & artists in residence</p>
                 </div>
 
-                <div className='flex justify-between relative mb-28'>
-                    <h1 className='text-[200px] break-words	w-full leading-[192px]'>Canal St. <br/>Community</h1>
-                    <p className='absolute right-0 text-6xl'>購物</p>
+                <div className='flex xl:flex-col justify-between relative mb-28'>
+                    <h1 className='text-[200px] lg:text-[160px] sm:text-6xl leading-[192px] lg:leading-[160px]'>Canal St. <br/>Community</h1>
+                    <p className='absolute right-0 text-6xl sm:hidden'>購物</p>
                 </div>
 
                 <div className="waves-des flex items-center py-28 my-28">

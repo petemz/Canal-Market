@@ -82,7 +82,7 @@ const Retail = () => {
             <LinkStrip linkObj={pgData[0]} handlePage={handlePage} currentPage={currentPage} />
             <LinkStrip linkObj={pgData[1]} handlePage={handlePage} currentPage={currentPage} />
 
-            <div ref={retailRef}  className={` h-full overflow-y-scroll ${currentPage === null ? 'w-[100vw] px-16' : 'w-[60px]'}  ${isExpanded ? 'px-16' : ''} sm:px-7 pt-40 sm:pt-24`}>
+            <div ref={retailRef} className={` h-full overflow-y-scroll ${currentPage === null ? 'w-[100vw] px-16' : 'w-[60px]'}  ${isExpanded ? 'px-16' : ''} sm:px-7 pt-40 sm:pt-24`}>
                 <div className='flex w-full justify-between sm:justify-end mb-20'>
                     <div className='sm:hidden flex flex-col opacity-50 tracking-widest items-center'>
                         <p className='[writing-mode:vertical-lr] font-semibold'>Retail</p>

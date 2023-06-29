@@ -23,7 +23,6 @@ const usePageTransition = (page, pgData, currentPage, setCurrentPage, refA) => {
     setCurrentPage(page)
   }
 
-
   const pop = () => {
     let zRef
 
@@ -36,12 +35,12 @@ const usePageTransition = (page, pgData, currentPage, setCurrentPage, refA) => {
 
     return zRef
   }
-  
+  console.log(pop())
 
   useEffect(() => {
       const timeline = gsap.timeline();
 
-      const screenWidth = window.innerWidth;
+      //const screenWidth = window.innerWidth;
 
       if (currentPage !== null) {
         timeline.to(refA.current, {
@@ -57,15 +56,13 @@ const usePageTransition = (page, pgData, currentPage, setCurrentPage, refA) => {
           ease: Power1.easeInOut,
         });
 
+        if (pop() !== undefined) {
         gsap.to(pop().current, {
           width: '60px',
           duration: 0.3,
           delay: 0.2,
         });
-
-        setTimeout(() => {
-          setIsExpanded(true);
-        }, 400)
+      }
 
       } else if (currentPage === null) {
         timeline
@@ -75,6 +72,12 @@ const usePageTransition = (page, pgData, currentPage, setCurrentPage, refA) => {
       }
     
   }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsExpanded(true);
+    }, 400)
+  })
 
   useEffect(() => {
     if (isExpanded) {
