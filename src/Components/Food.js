@@ -35,7 +35,6 @@ const Food = () => {
     const retailRef = useRef(null)
     const commRef = useRef(null) 
 
-
     const pgData = [
         {name: 'home', ref: homeRef, color: 'bg-white'}, 
         {name: 'retail', ref:retailRef, symb: '購物', color: 'bg-red-500'},  
