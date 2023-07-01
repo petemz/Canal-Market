@@ -11,7 +11,6 @@ import food from '../Assets/food.jpg';
 import retail from '../Assets/retail.jpg';
 import comm from '../Assets/comm.jpg';
 import map from '../Assets/map.avif'
-import Nav from './Nav';
 
 const Home = () => {
     const {currentPage, setCurrentPage, isModal, setIsModal, isNav, setIsNav} = useContext(Context)

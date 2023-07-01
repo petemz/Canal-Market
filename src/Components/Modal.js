@@ -30,17 +30,17 @@ const Modal = ({ setIsModal }) => {
 
     return (
         <div className='h-full overflow-y-scroll w-full -md:px-32 -md:py-14 fixed bg-black bg-opacity-50 z-50'>
-            <div ref={modalRef} className='max-w-[1200px] stripes-des px-16 py-20 w-full bg-white'>
-                <p className='text-center px-20 py-10 md:text-6xl text-[100px] leading-[101px]'>Become a Vendor at Canal Street Market.</p>
+            <div ref={modalRef} className='max-w-[1200px] stripes-des px-16 sm:px-10 py-20 w-full bg-white'>
+                <p className='text-center px-20 sm:px-5 py-10 md:text-6xl text-[100px] leading-[101px]'>Become a Vendor at Canal Street Market.</p>
 
                 <div className="mb-12">
-                    <div className='flex'>
-                        <div className='w-1/2'>
-                            <img className='h-full -md:max-h-[480px] w-full object-cover' src={modal1} alt="" />
+                    <div className='flex xs:flex-col'>
+                        <div className='w-1/2 xs:w-full'>
+                            <img className='h-full -md:max-h-[480px] xs:max-h-96 w-full object-cover' src={modal1} alt="" />
                         </div>
-                        <div className='pl-14 py-6 w-1/2 flex flex-col justify-center'>
+                        <div className='pl-14 xs:pl-7 py-6 w-1/2 xs:w-full flex flex-col justify-center'>
                             <h3 className='text-[40px]'>How it works</h3>
-                            <ul className='ml-6 text-[14px]'>
+                            <ul className='ml-6 xs:ml-0 text-[14px]'>
                                 <li className='my-7 flex'>
                                     <div className='h-4 w-4 mr-4'>   
                                         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 64 64" style={{ enableBackground: 'new 0 0 512 512'}} xmlSpace="preserve">
@@ -69,10 +69,13 @@ const Modal = ({ setIsModal }) => {
                         </div>
                     </div>
 
-                    <div className='flex '>
-                        <div className='pr-14 py-6 w-1/2 flex flex-col justify-center'>
+                    <div className='flex flex-row-reverse xs:flex-col'>
+                        <div className='w-1/2 xs:w-full'>
+                            <img className='h-full -md:max-h-[480px]  xs:max-h-96 w-full object-cover' src={modal2} alt="" />
+                        </div>
+                        <div className='pr-14 xs:pr-0 xs:pl-7 py-6 w-1/2 xs:w-full flex flex-col justify-center'>
                             <h3 className='text-[40px]'>Why Canal Street Market?</h3>
-                            <ul className='mr-6 text-[14px]'>
+                            <ul className='mr-6 xs:mr-0 text-[14px]'>
                                 <li className='my-7 flex'>
                                     <div className='h-4 w-4 mr-4'>   
                                         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 64 64" style={{ enableBackground: 'new 0 0 512 512'}} xmlSpace="preserve">
@@ -99,18 +102,15 @@ const Modal = ({ setIsModal }) => {
                                 </li>
                             </ul>
                         </div>
-                        <div className='w-1/2'>
-                            <img className='h-full -md:max-h-[480px] w-full object-cover' src={modal2} alt="" />
-                        </div>
                     </div>
 
-                    <div className='flex'>
-                        <div className='w-1/2'>
-                            <img className='h-full -md:max-h-[480px] w-full object-cover' src={modal3} alt="" />
+                    <div className='flex xs:flex-col'>
+                        <div className='w-1/2 xs:w-full'>
+                            <img className='h-full -md:max-h-[480px]  xs:max-h-96 w-full object-cover' src={modal3} alt="" />
                         </div>
-                        <div className='pl-14 py-14 w-1/2 flex flex-col justify-center'>
+                        <div className='pl-14 xs:pl-7 py-6 w-1/2 xs:w-full flex flex-col justify-center'>
                             <h3 className='text-[40px]'>How it works</h3>
-                            <ul className='ml-6 text-[14px]'>
+                            <ul className='ml-6 xs:ml-0 text-[14px]'>
                                 <li className='my-7 flex'>
                                     <div className='h-4 w-4 mr-4'>   
                                         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 64 64" style={{ enableBackground: 'new 0 0 512 512'}} xmlSpace="preserve">

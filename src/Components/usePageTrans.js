@@ -35,7 +35,7 @@ const usePageTransition = (page, pgData, currentPage, setCurrentPage, refA) => {
 
     return zRef
   }
-  console.log(pop())
+  //console.log(pop())
 
   useEffect(() => {
       const timeline = gsap.timeline();

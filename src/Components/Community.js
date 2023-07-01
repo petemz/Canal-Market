@@ -5,7 +5,8 @@ import Modal from './Modal';
 import Tailend from './Tailend';
 import LinkStrip from './LinkStrip';
 import usePageTransition from './usePageTrans';
-import Nav from './Nav';
+
+import Logo from "../Assets/logo.svg"
 
 const Retail = () => {
     const {currentPage, setCurrentPage, isModal, setIsModal, isNav, setIsNav} = useContext(Context)
@@ -32,7 +33,7 @@ const Retail = () => {
                 )}
             )}
 
-            <div ref={commRef}  className={` h-full overflow-y-scroll ${currentPage === null ? 'w-[100vw] px-16' : 'w-[60px]'}  ${isExpanded ? 'px-16' : ''} sm:px-7 pt-40 sm:pt-24`}>
+            <div ref={commRef}  className={` h-full overflow-y-scroll ${currentPage === null ? 'w-[100vw] px-16' : 'w-[60px]'}  ${isExpanded ? 'px-16' : ''} sm:px-7 pt-40 sm:pt-24 overflow-x-hidden`}>
                 <div className='flex w-full justify-between sm:justify-end mb-20'>
                     <div className='sm:hidden flex flex-col opacity-50 tracking-widest items-center'>
                         <p className='[writing-mode:vertical-lr] font-semibold'>Commmunity</p>
@@ -45,7 +46,7 @@ const Retail = () => {
                 </div>
 
                 <div className='flex xl:flex-col justify-between relative mb-28'>
-                    <h1 className='text-[200px] lg:text-[160px] sm:text-6xl leading-[192px] lg:leading-[160px]'>Canal St. <br/>Community</h1>
+                    <h1 className='text-[195px] leading-[192px] lg:text-[160px] sm:text-6xl lg:leading-[160px] break-words overflow-clip'>Canal St. <br/>Community</h1>
                     <p className='absolute right-0 text-6xl sm:hidden'>購物</p>
                 </div>
 
@@ -66,8 +67,8 @@ const Retail = () => {
                         </g>
                     </svg>
 
-                    <div className='w-1/2 text-center'>
-                        <p className=' text-[100px] leading-[100px] mb-7'>The <br/> Best <br/> of <br/> NYC</p>
+                    <div className='w-1/2 sm:w-full sm:my-12 xs:my-8 text-center'>
+                        <p className=' text-[100px] sm:text-6xl leading-[100px] sm:leading-normal mb-7 sm:mb-4'>The <br className='sm:hidden'/> Best of <br className='sm:hidden'/> NYC</p>
                         <p className=' tracking-widest'>All under one roof!</p>
                     </div>
                     
@@ -92,6 +93,9 @@ const Retail = () => {
                 <Tailend setIsModal={setIsModal}/>
             </div>
 
+            <div className='absolute -sm:hidden rounded-full top-16 sm:top-8 left-14 sm:left-7 w-[60px]'>
+                <img className='top-16 left-[7%]' src={Logo} alt="Logo" />
+            </div>
 
             {isModal && 
                 <Modal setIsModal={setIsModal}/>

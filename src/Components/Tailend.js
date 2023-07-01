@@ -54,7 +54,7 @@ const Tailend = ({ setIsModal }) => {
                     <p className='text-[22px] sm:hidden mr-16 flex-shrink-0'>Stay up to date <br/> with our newsletter</p>
                     <div className="-sm:hidden mb-5 flex flex-col items-center">    
                         <svg className="w-10 mb-2" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 512 512" style={{ enableBackground: 'new 0 0 512 512'}} xmlSpace="preserve">
-                            <g><path d="M467 76H45C20.238 76 0 96.149 0 121v270c0 24.86 20.251 45 45 45h422c24.762 0 45-20.149 45-45V121c0-24.857-20.248-45-45-45zm-6.91 30L267.624 299.094c-5.864 5.882-17.381 5.886-23.248 0L51.91 106h408.18zM30 385.485v-258.97L159.065 256 30 385.485zM51.91 406l128.334-128.752 42.885 43.025c17.574 17.631 48.175 17.624 65.743 0l42.885-43.024L460.09 406H51.91zM482 385.485 352.935 256 482 126.515v258.97z" fill="currentColor" dataOriginal="#000000"></path></g>
+                            <g><path d="M467 76H45C20.238 76 0 96.149 0 121v270c0 24.86 20.251 45 45 45h422c24.762 0 45-20.149 45-45V121c0-24.857-20.248-45-45-45zm-6.91 30L267.624 299.094c-5.864 5.882-17.381 5.886-23.248 0L51.91 106h408.18zM30 385.485v-258.97L159.065 256 30 385.485zM51.91 406l128.334-128.752 42.885 43.025c17.574 17.631 48.175 17.624 65.743 0l42.885-43.024L460.09 406H51.91zM482 385.485 352.935 256 482 126.515v258.97z" fill="currentColor" data-original="#000000"></path></g>
                         </svg>
                         <p className='text-sm font-semibold flex-shrink-0'>Get updates in your inbox</p>
                     </div>

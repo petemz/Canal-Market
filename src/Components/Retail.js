@@ -6,7 +6,7 @@ import Tailend from './Tailend';
 import usePageTransition from './usePageTrans';
 import LinkStrip from './LinkStrip';
 import Nav from './Nav';
-import Logo from '../Assets/Logo';
+import logo from '../Assets/logo.svg';
 
 import comm from '../Assets/comm.jpg';
 import bakery from '../Assets/bakery-unsplash.jpg';
@@ -91,7 +91,7 @@ const Retail = () => {
                         </svg>
                     </div>
 
-                    <p>Retail Market Hours: <br/> Mon - Sun: 11:00AM - 7:00PM</p>
+                    <p className='text-right'>Retail Market Hours: <br/> Mon - Sun: 11:00AM - 7:00PM</p>
                 </div>
 
                 <div className='flex xl:flex-col justify-between relative mb-28'>
@@ -147,7 +147,7 @@ const Retail = () => {
                         </g>
                     </svg>
 
-                    <div className='w-1/2 sm:w-full sm:my-12 xs:my-8 text-center '>
+                    <div className='w-1/2 sm:w-full sm:my-12 xs:my-8 text-center'>
                         <p className=' text-[100px] sm:text-6xl leading-[100px] sm:leading-normal mb-7 sm:mb-4'>The <br className='sm:hidden'/> Best of <br className='sm:hidden'/> NYC</p>
                         <p className=' tracking-widest'>All under one roof!</p>
                     </div>
@@ -184,13 +184,13 @@ const Retail = () => {
 
             <LinkStrip linkObj={pgData[2]} handlePage={handlePage} currentPage={currentPage} />
 
+            <div className='absolute -sm:hidden rounded-full top-16 sm:top-8 left-14 sm:left-7 w-[60px]'>
+                <img className='top-16 left-[7%]' src={logo} alt="Logo" />
+            </div>
+
             {isModal && 
                 <Modal setIsModal={setIsModal}/>
             }
-
-            <div className='absolute top-16 sm:top-8 left-14 sm:left-7 -sm:hidden h-[60px]'>
-                <Logo />
-            </div>
 
             {isNav && 
                 <Nav setIsModal={setIsModal} setIsNav={setIsNav}/>
