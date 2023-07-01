@@ -6,63 +6,36 @@ import Tailend from './Tailend';
 import usePageTransition from './usePageTrans';
 import LinkStrip from './LinkStrip';
 import Nav from './Nav';
+import HoverImg from './HoverImg';
 import logo from '../Assets/logo.svg';
 
 import comm from '../Assets/comm.jpg';
+import food from '../Assets/food.jpg';
+import retail from '../Assets/retail.jpg';
 import bakery from '../Assets/bakery-unsplash.jpg';
 
 const Retail = () => {
     const {currentPage, setCurrentPage, isModal, setIsModal, isNav, setIsNav} = useContext(Context)
 
-    const hoverRef = useRef(null);
-    const [visible, setVisible] = useState(false)
+    const hoverRef = useRef(null)
     
     const items = [
-        {item: 'Design Objects', vendor: 'American Design Club'},
-        {item: 'Jewelry', vendor: 'Beeshaus & Raum NYC'},
-        {item: 'Jewelry', vendor: 'Beroep Tech'},
-        {item: 'Bonsai Shop', vendor: 'Dandy Farmer Bonsai Shop'},
-        {item: 'Fashion Apparel', vendor: 'Friend Of A Friend Studio'},
-        {item: 'Design Objects', vendor: 'Leibal'},
-        {item: 'K Pop Apparel and Merchandise', vendor: 'Mandu Apparel'},
-        {item: 'Home Goods', vendor: 'Mogutable'},
-        {item: 'Jewelry', vendor: 'Mottive'},
-        {item: 'Newstand and Magazines', vendor: 'Office Magazine Newstand'},
-        {item: 'Fashion Apparel', vendor: 'Preppy Trendy'},
-        {item: 'Sunglasses', vendor: 'Savage Anchor'},
-        {item: 'Jewelry', vendor: 'Seven 50'},
-        {item: 'Sustainable lifestyle store', vendor: 'Siizu'},
-        {item: 'Jewelry', vendor: 'Swagychic'},
+        {type: 'Design Objects', vendor: 'American Design Club', img: comm},
+        {type: 'Jewelry', vendor: 'Beeshaus & Raum NYC', img: food},
+        {type: 'Jewelry', vendor: 'Beroep Tech', img: comm},
+        {type: 'Bonsai Shop', vendor: 'Dandy Farmer Bonsai Shop', img: retail},
+        {type: 'Fashion Apparel', vendor: 'Friend Of A Friend Studio', img: retail},
+        {type: 'Design Objects', vendor: 'Leibal', img: food},
+        {type: 'K Pop Apparel and Merchandise', vendor: 'Mandu Apparel', img: comm},
+        {type: 'Home Goods', vendor: 'Mogutable', img: comm},
+        {type: 'Jewelry', vendor: 'Mottive', img: retail},
+        {type: 'Newstand and Magazines', vendor: 'Office Magazine Newstand', img: food},
+        {type: 'Fashion Apparel', vendor: 'Preppy Trendy', img: comm},
+        {type: 'Sunglasses', vendor: 'Savage Anchor', img: retail},
+        {type: 'Jewelry', vendor: 'Seven 50', img: retail},
+        {type: 'Sustainable lifestyle store', vendor: 'Siizu', img: food},
+        {type: 'Jewelry', vendor: 'Swagychic', img: food},
     ]
-    const handleShow = (img) => {
-        setVisible(true)
-    }
-    const [width, setWidth] = useState(0)
-    useEffect(() => {
-        const handleResize = () => {
-            setWidth(hoverRef.current.offsetWidth)
-        }
-        handleResize();
-        window.addEventListener('resize', handleResize)
-    
-        return () => {
-            window.removeEventListener('resize', handleResize)
-        }
-    })
-    const mountedStyle = { 
-        position: 'absolute',
-        top: Math.floor(Math.random() * (window.innerHeight - 450)),
-        left: Math.floor(Math.random()* (width-340)),
-        height: '450px',
-        animation: "inAnimation 500ms ease-in" 
-    }
-    const unmountedStyle = {
-        position: 'absolute',
-        top: Math.floor(Math.random() * (window.innerHeight - 450)),
-        left: Math.floor(Math.random()* (width-340)),
-        height: '450px',
-        animation: "outAnimation 1200ms ease-out",
-    }
 
     const commRef = useRef(null)
     const homeRef = useRef(null)
@@ -75,7 +48,7 @@ const Retail = () => {
         {name: 'community', ref: commRef, symb: '文化', color: 'bg-yellow-500'}
     ]
 
-    const { handlePage, isExpanded } = usePageTransition('retail', pgData, currentPage, setCurrentPage, retailRef);
+    const { handlePage, isExpanded } = usePageTransition('retail', pgData, currentPage, setCurrentPage, retailRef)
 
     return (
         <div className="home bg-red-500 h-full flex">
@@ -104,20 +77,7 @@ const Retail = () => {
                 </div>
 
                 <div ref={hoverRef} className='grid grid-cols-3 lg:grid-cols-2 sm:grid-cols-1 gap-16 sm:gap-8 relative'>
-                    {items.map(item => {
-                        return (
-                            <div
-                                className='cursor-pointer z-10' key={item.vendor} 
-                                onMouseEnter={() => handleShow(item.img)}
-                                onMouseLeave={() => setVisible(false)}
-                            >
-                                <p className=''>{item.item}</p>
-                                <p className='text-3xl mt-5 sm:mt-2'>{item.vendor}</p>
-                            </div>
-                        )}
-                    )}
-                    
-                    {visible && <img className='sm:hidden transition ease-in-out opacity-80' src={comm} style={visible ? mountedStyle : unmountedStyle} alt=""/>}
+                    <HoverImg items={items} hoverRef={hoverRef}/>
                 </div>
 
                 <div className="waves-des flex sm:flex-col justify-between items-center -lg:px-[5%] sm:py-14 py-28 my-28 sm:my-20 xs:my-14">

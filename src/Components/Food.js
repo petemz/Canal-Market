@@ -10,11 +10,12 @@ import retail from '../Assets/retail.jpg';
 import comm from '../Assets/comm.jpg';
 import bakery from '../Assets/bakery-unsplash.jpg';
 import Logo from "../Assets/logo.svg"
+import HoverImg from './HoverImg';
 
 const Food = () => {
     const {currentPage, setCurrentPage, isModal, setIsModal, isNav, setIsNav} = useContext(Context)
     
-    const hoverRef = useRef(null);
+    const hoverRef = useRef(null)
     const [visible, setVisible] = useState(false)
     const [hoverImg, setHoverImg] = useState('')
 
@@ -104,20 +105,7 @@ const Food = () => {
                 </div>
 
                 <div ref={hoverRef} className='grid grid-cols-3 lg:grid-cols-2 sm:grid-cols-1 gap-16 sm:gap-8 relative'>
-                    {foods.map(food => {
-                        return (
-                            <div 
-                                className='cursor-pointer z-10' key={food.vendor} 
-                                onMouseEnter={() => handleShow(food.img)}
-                                onMouseLeave={() => setVisible(false)}
-                            >
-                                <p className=''>{food.type}</p>
-                                <p className='text-3xl mt-5 sm:mt-2'>{food.vendor}</p>
-                            </div>
-                        )}
-                    )}
-
-                    {visible && <img className='sm:hidden transition ease-in-out opacity-80' src={hoverImg} style={visible ? mountedStyle : unmountedStyle} alt=""/>}
+                    <HoverImg items={foods} hoverRef={hoverRef}/>
                 </div>
 
                 <div className="waves-des flex sm:flex-col justify-between items-center -lg:px-[5%] sm:py-14 py-28 my-28 sm:my-20 xs:my-14">
