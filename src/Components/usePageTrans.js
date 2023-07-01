@@ -35,12 +35,9 @@ const usePageTransition = (page, pgData, currentPage, setCurrentPage, refA) => {
 
     return zRef
   }
-  //console.log(pop())
 
   useEffect(() => {
       const timeline = gsap.timeline();
-
-      //const screenWidth = window.innerWidth;
 
       if (currentPage !== null) {
         timeline.to(refA.current, {

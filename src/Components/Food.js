@@ -18,7 +18,6 @@ const Food = () => {
     const [visible, setVisible] = useState(false)
     const [hoverImg, setHoverImg] = useState('')
 
-
     const foods = [
         {type: 'Khao Man Gai', vendor: 'Betong', img: comm}, 
         {type: 'Coffee, Pastries & Smoothies', vendor:'Chinatown Del', img: food}, 
