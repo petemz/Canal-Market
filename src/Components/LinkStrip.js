@@ -13,7 +13,7 @@ const LinkStrip = ({linkObj, handlePage, currentPage}) => {
                     onClick={()=> handlePage(linkObj.name)} ref={linkObj.ref}  
                     className={` bg-white ${currentPage === linkObj.name ? 'w-[calc(100vw-180px)]' : 'w-[60px]'}  ${currentPage === null ? 'h-0' : 'h-full'} relative`}
                 >
-                    <img className='absolute top-16 left-[7%]' src={logo} alt="Logo" />
+                    <img className='absolute top-16 left-[7%] max-w-[60px]' src={logo} alt="Logo" />
                 </div>
             </Link>
         :

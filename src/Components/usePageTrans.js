@@ -63,9 +63,9 @@ const usePageTransition = (page, pgData, currentPage, setCurrentPage, refA) => {
 
       } else if (currentPage === null) {
         timeline
-          .to(pgData[2].ref.current, { height: '100%', duration: 0.8, stagger: 0.2 })
-          .to(pgData[1].ref.current, { height: '100%', duration: 0.7, stagger: 0.1 }, '<0.1')
-          .to(pgData[0].ref.current, { height: '100%', duration: 0.6 }, '<0.1');
+          .to(pgData[2].ref.current, { height: '100%', duration: 0.6, })
+          .to(pgData[1].ref.current, { height: '100%', duration: 0.5, }, '<0.1')
+          .to(pgData[0].ref.current, { height: '100%', duration: 0.4 }, '<0.1');
       }
     
   }, []);
