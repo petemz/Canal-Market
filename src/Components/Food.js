@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useContext } from 'react';
+import { useRef, useContext } from 'react';
 import {Context} from "../Context"
 import Modal from './Modal';
 import Tailend from './Tailend';
@@ -16,8 +16,6 @@ const Food = () => {
     const {currentPage, setCurrentPage, isModal, setIsModal, isNav, setIsNav} = useContext(Context)
     
     const hoverRef = useRef(null)
-    const [visible, setVisible] = useState(false)
-    const [hoverImg, setHoverImg] = useState('')
 
     const foods = [
         {type: 'Khao Man Gai', vendor: 'Betong', img: comm}, 
@@ -31,40 +29,6 @@ const Food = () => {
         {type: 'Sushi, Handrolls & Chirashi', vendor: 'Mastunori', img: retail},
         {type: 'Filipino Inspired Taqueria', vendor: 'Mucho Sarap', img: food}
     ]
-
-    const handleShow = (img) => {
-        setHoverImg(img)
-        setVisible(true)
-    }
-
-    const [width, setWidth] = useState(0)
-  
-    useEffect(() => {
-        const handleResize = () => {
-            setWidth(hoverRef.current.offsetWidth)
-        }
-        handleResize();
-        window.addEventListener('resize', handleResize)
-    
-        return () => {
-            window.removeEventListener('resize', handleResize)
-        }
-    })
-    
-    const mountedStyle = { 
-        position: 'absolute',
-        top: Math.floor(Math.random() * (window.innerHeight - 450)),
-        left: Math.floor(Math.random()* (width-340)),
-        height: '450px',
-        animation: "inAnimation 500ms ease-in" 
-    }
-    const unmountedStyle = {
-        position: 'absolute',
-        top: Math.floor(Math.random() * (window.innerHeight - 450)),
-        left: Math.floor(Math.random()* (width-340)),
-        height: '450px',
-        animation: "outAnimation 1200ms ease-out",
-    }
 
     const homeRef = useRef(null)
     const foodRef = useRef(null)
