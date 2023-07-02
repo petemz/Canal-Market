@@ -20,6 +20,8 @@ const Home = () => {
     const retailRef = useRef(null)
     const commRef = useRef(null)
 
+    //const xPage = {name: 'home', ref: homeRef, color: 'bg-blue-400'}
+
     const pgData = [
         {name: 'food', ref: foodRef, symb: '餐饮',  color: 'bg-blue-400'}, 
         {name: 'retail', ref:retailRef, symb: '購物', color: 'bg-red-500'},  

@@ -6,7 +6,7 @@ import Tailend from './Tailend';
 import LinkStrip from './LinkStrip';
 import usePageTransition from './usePageTrans';
 
-import Logo from "../Assets/logo.svg"
+import logo from "../Assets/logo.svg"
 
 const Retail = () => {
     const {currentPage, setCurrentPage, isModal, setIsModal, isNav, setIsNav} = useContext(Context)
@@ -94,7 +94,7 @@ const Retail = () => {
             </div>
 
             <div className='absolute -sm:hidden rounded-full top-16 sm:top-8 left-14 sm:left-7 w-[60px]'>
-                <img className='top-16 left-[7%]' src={Logo} alt="Logo" />
+                <img className='top-16 left-[7%]' src={logo} alt="Logo" />
             </div>
 
             {isModal && 

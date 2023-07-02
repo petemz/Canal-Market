@@ -54,13 +54,12 @@ const usePageTransition = (page, pgData, currentPage, setCurrentPage, refA) => {
         });
 
         if (pop() !== undefined) {
-        gsap.to(pop().current, {
-          width: '60px',
-          duration: 0.3,
-          delay: 0.2,
-        });
-      }
-
+          gsap.to(pop().current, {
+            width: '60px',
+            duration: 0.3,
+            delay: 0.2,
+          });
+        }
       } else if (currentPage === null) {
         timeline
           .to(pgData[2].ref.current, { height: '100%', duration: 0.6, })
@@ -73,7 +72,7 @@ const usePageTransition = (page, pgData, currentPage, setCurrentPage, refA) => {
   useEffect(() => {
     setTimeout(() => {
       setIsExpanded(true);
-    }, 400)
+    }, 700)
   })
 
   useEffect(() => {
