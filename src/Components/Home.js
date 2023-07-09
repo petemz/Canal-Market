@@ -1,16 +1,14 @@
-import { useRef } from 'react';
-import {Context} from "../Context"
-import { useContext } from "react"
+import { useRef, useContext } from 'react';
+import {Context} from "../Context";
 import Modal from './Modal';
 import Tailend from './Tailend';
 import usePageTransition from './usePageTrans';
 import LinkStrip from './LinkStrip';
-
 import myImage from '../Assets/home-main-xz2.jpg';
 import food from '../Assets/food.jpg';
 import retail from '../Assets/retail.jpg';
 import comm from '../Assets/comm.jpg';
-import map from '../Assets/map.avif'
+import map from '../Assets/map.avif';
 
 const Home = () => {
     const {currentPage, setCurrentPage, isModal, setIsModal, isNav, setIsNav} = useContext(Context)
@@ -19,8 +17,6 @@ const Home = () => {
     const foodRef = useRef(null)
     const retailRef = useRef(null)
     const commRef = useRef(null)
-
-    //const xPage = {name: 'home', ref: homeRef, color: 'bg-blue-400'}
 
     const pgData = [
         {name: 'food', ref: foodRef, symb: '餐饮',  color: 'bg-blue-400'}, 

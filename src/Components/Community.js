@@ -1,11 +1,9 @@
-import { useRef } from 'react';
+import { useRef, useContext } from 'react';
 import {Context} from "../Context"
-import { useContext } from "react"
 import Modal from './Modal';
 import Tailend from './Tailend';
 import LinkStrip from './LinkStrip';
 import usePageTransition from './usePageTrans';
-
 import logo from "../Assets/logo.svg"
 
 const Retail = () => {
@@ -20,7 +18,6 @@ const Retail = () => {
         {name: 'home', ref: homeRef, color: 'bg-white'}, 
         {name: 'food', ref: foodRef, symb: '餐饮',  color: 'bg-blue-400'}, 
         {name: 'retail', ref:retailRef, symb: '購物', color: 'bg-red-500'}
-        
     ]
 
     const { handlePage, isExpanded } = usePageTransition('community', pgData, currentPage, setCurrentPage, commRef)
@@ -88,7 +85,6 @@ const Retail = () => {
                         </g>
                     </svg>
                 </div>
-
 
                 <Tailend setIsModal={setIsModal}/>
             </div>

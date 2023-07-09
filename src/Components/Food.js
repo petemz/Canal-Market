@@ -4,7 +4,6 @@ import Modal from './Modal';
 import Tailend from './Tailend';
 import usePageTransition from './usePageTrans';
 import LinkStrip from './LinkStrip';
-
 import food from '../Assets/food.jpg';
 import retail from '../Assets/retail.jpg';
 import comm from '../Assets/comm.jpg';
@@ -98,10 +97,8 @@ const Food = () => {
                     </svg>
                 </div>
 
-
                 <Tailend setIsModal={setIsModal}/>
             </div>
-
             
             <LinkStrip linkObj={pgData[1]} handlePage={handlePage} currentPage={currentPage} />
             <LinkStrip linkObj={pgData[2]} handlePage={handlePage} currentPage={currentPage} />

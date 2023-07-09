@@ -1,6 +1,5 @@
-import { useRef } from 'react';
+import { useRef, useContext } from 'react';
 import {Context} from "../Context"
-import { useContext } from "react"
 import Modal from './Modal';
 import Tailend from './Tailend';
 import usePageTransition from './usePageTrans';
@@ -8,7 +7,6 @@ import LinkStrip from './LinkStrip';
 import Nav from './Nav';
 import HoverImg from './HoverImg';
 import logo from '../Assets/logo.svg';
-
 import comm from '../Assets/comm.jpg';
 import food from '../Assets/food.jpg';
 import retail from '../Assets/retail.jpg';
@@ -72,8 +70,7 @@ const Retail = () => {
                     <p className='absolute right-0 text-6xl sm:hidden'>購物</p>
                     <div className=' w-full -xl:w-[300px] sm:h-[450px] h-[600px] -xl:h-[450px] mt-16 -xl:mt-24 -xl:ml-2'>
                         <img className='h-full w-full object-cover' src={bakery} alt="" />
-                    </div>
-                    
+                    </div>    
                 </div>
 
                 <div ref={hoverRef} className='grid grid-cols-3 lg:grid-cols-2 sm:grid-cols-1 gap-16 sm:gap-8 relative'>
