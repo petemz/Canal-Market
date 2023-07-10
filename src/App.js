@@ -1,13 +1,12 @@
 import './App.css';
+import { useContext } from 'react';
+import {Context} from "./Context";
 import { Routes, Route } from 'react-router-dom';
 import Home from './Components/Home';
 import Food from './Components/Food';
 import Retail from './Components/Retail';
 import Community from './Components/Community';
-
 import Nav from './Components/Nav';
-import { useContext } from 'react';
-import {Context} from "./Context"
 
 function App() {
   const {setIsModal, isNav, setIsNav} = useContext(Context)
@@ -20,13 +19,12 @@ function App() {
         <Route path='/retail' element={ <Retail /> }/>
         <Route path='/community' element={ <Community /> }/>
       </Routes>
-
       
       {isNav && 
         <Nav setIsModal={setIsModal} setIsNav={setIsNav}/>
       }
     </div>
-  );
+  )
 }
 
 export default App;

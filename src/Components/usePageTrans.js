@@ -44,30 +44,30 @@ const usePageTransition = (page, pgData, currentPage, setCurrentPage, refA) => {
           width: width > 800 ? "calc(100vw - 180px)" : "100vw",
           duration: 0.01,
           delay: 0.1,
-        });
+        })
 
         timeline.from(refA.current.children, {
           opacity: 0,
           delay: 0.6,
           duration: 0.5,
           ease: Power1.easeInOut,
-        });
+        })
 
         if (pop() !== undefined) {
           gsap.to(pop().current, {
             width: '60px',
             duration: 0.3,
             delay: 0.2,
-          });
+          })
         }
       } else if (currentPage === null) {
         timeline
           .to(pgData[2].ref.current, { height: '100%', duration: 0.6, })
           .to(pgData[1].ref.current, { height: '100%', duration: 0.5, }, '<0.1')
-          .to(pgData[0].ref.current, { height: '100%', duration: 0.4 }, '<0.1');
+          .to(pgData[0].ref.current, { height: '100%', duration: 0.4 }, '<0.1')
       }
     
-  }, []);
+  }, [])
 
   useEffect(() => {
     setTimeout(() => {
@@ -79,12 +79,12 @@ const usePageTransition = (page, pgData, currentPage, setCurrentPage, refA) => {
     if (isExpanded) {
       setCurrentPage(currentPage);
     }
-  }, [isExpanded]);
+  }, [isExpanded])
 
 
   return {
     handlePage, isExpanded
-  };
-};
+  }
+}
 
 export default usePageTransition;

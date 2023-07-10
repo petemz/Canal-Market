@@ -9,6 +9,8 @@ const Modal = ({ setIsModal }) => {
     const modalRef = useRef()
 
     const handleForm = (e) => {
+        console.log(e.name)
+        console.log(formData)
         const { name, value } = e.target
         setFormData((prevFormData) => ({ ...prevFormData, [name]: value }))
     }
@@ -159,7 +161,7 @@ const Modal = ({ setIsModal }) => {
                 <div className="pt-12">
                     <h2 className="mb-10 text-6xl text-center">Become a a Vendor</h2>
                     <form 
-                        className="grid grid-cols-2 gap-x-16 gap-y-8"
+                        className="grid grid-cols-2 xs:flex xs:flex-col sm:gap-x-8 gap-x-16 gap-y-8"
                         onSubmit={handleSubmit}
                     >
                         <input 
@@ -168,8 +170,13 @@ const Modal = ({ setIsModal }) => {
                             value={formData.name} onChange={handleForm}
                         />
                         <div className="relative">
-                            <select className="focus:outline-dashed focus:border-none appearance-none border w-full border-black p-4 " id="cars" name="cars">
-                                <option className="border bg-red-500 cursor-pointer border-black p-4 " value="volvo">Volvo</option>
+                            <select name="type" onChange={handleForm} className="focus:outline-dashed focus:border-none appearance-none border w-full border-black p-4 " id="cars">
+                                <option 
+                                    className="border cursor-pointer border-black p-4 " 
+                                    value={"volvo"} onClick={() => handleForm} 
+                                >
+                                    Volvo
+                                </option>
                                 <option className=" block h-10 cursor-pointer border border-black p-4 " value="saab">Saab</option>
                             </select>
                             
@@ -181,12 +188,12 @@ const Modal = ({ setIsModal }) => {
                         <input 
                             className="focus:outline-dashed focus:border-none border border-black p-4 placeholder-current" 
                             placeholder="Business Name" name="name" type="text"
-                            value={formData.name} onChange={handleForm}
+                            value={formData.startDate} onChange={handleForm}
                         />
                         <input 
                             className="focus:outline-dashed focus:border-none border border-black p-4 placeholder-current" 
                             placeholder="Business Name" name="name" type="text"
-                            value={formData.name} onChange={handleForm}
+                            value={formData.term} onChange={handleForm}
                         />
                         <input 
                             className="focus:outline-dashed focus:border-none border border-black p-4 placeholder-current" 
@@ -204,19 +211,19 @@ const Modal = ({ setIsModal }) => {
                             value={formData.instagram} onChange={handleForm}
                         />
                         <input  
-                            className=" focus:outline-dashed focus:border-none border border-black p-4 placeholder-current" 
+                            className="focus:outline-dashed focus:border-none border border-black p-4 placeholder-current" 
                             placeholder="Website" type="url"
                             pattern="https://.*" size="30"
                             name="website" id="website" required
                             value={formData.website} onChange={handleForm}
                         />
                         <input 
-                            className=" focus:outline-dashed focus:border-none col-span-2 border border-black p-4 placeholder-current" 
+                            className="focus:outline-dashed focus:border-none border border-black p-4 placeholder-current col-span-2" 
                             placeholder="Link a sales or deck" name="brand" type="text"
                             value={formData.brand} onChange={handleForm}
                         />
                         <textarea 
-                            className="h-64 focus:outline-dashed focus:border-none col-span-2 border border-black p-4 resize-none placeholder-current" 
+                            className="focus:outline-dashed focus:border-none border border-black p-4 placeholder-current col-span-2 h-64 resize-none" 
                             placeholder="Tell us a little about yourself..." name="description" type="text"
                             value={formData.description} onChange={handleForm}
                         />
